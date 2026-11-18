@@ -914,9 +914,164 @@
     </div>
   </div>
 
-  <script>
+    <script>
     // ============================================================
-    // 1. 每日行程資料（同步最新成員航班與 01/14 16:00 送別忙、豆）
+    // 1. 仁川機場夜間巴士互動路線與時刻表（依官方圖一、圖二製作）
+    // ============================================================
+    const nightBusData = {
+      N6000: {
+        code: 'N6000',
+        direction: '江南高速巴士客運站方向',
+        platform: '仁川機場 T1 · 1樓 6A 站牌',
+        recommend: '若住候補 ② 禾谷洞（松亭站／鹽倉站下車轉計程車）',
+        badgeStyle: 'bg-destiBlue/20 border-destiBlue/40',
+        stops: [
+          { name: '仁川機場 T1', time: '起點 (0分)' },
+          { name: '松亭站 (송정역)', time: '約 40 分鐘' },
+          { name: '鹽倉站 (염창역)', time: '約 50 分鐘' },
+          { name: '江南高速巴士', time: '約 70 分鐘' }
+        ],
+        schedules: ['23:50', '00:40', '01:30', '02:20', '03:10', '03:50'],
+        note: '往江西區禾谷洞可於「松亭站」或「鹽倉站」下車轉乘計程車（約 8–10 分鐘即達）。'
+      },
+      N6002: {
+        code: 'N6002',
+        direction: '清涼里方向',
+        platform: '仁川機場 T1 · 1樓 6A 站牌',
+        recommend: '★ 若住候補 ① 青丘站（興仁之門下車轉計程車 3 分鐘）',
+        badgeStyle: 'bg-destiPink/25 border-destiPink/45',
+        stops: [
+          { name: '仁川機場 T1', time: '起點 (0分)' },
+          { name: '弘大', time: '約 45 分鐘' },
+          { name: '四季酒店', time: '約 60 分鐘' },
+          { name: '興仁之門 (東大門)', time: '約 75 分鐘' },
+          { name: '清涼里', time: '約 90 分鐘' }
+        ],
+        schedules: ['00:15', '01:05', '02:00', '02:55', '03:45'],
+        note: '令、保 23:30 落地領行李後，搭 00:15 或 01:05 班次最剛好！於「興仁之門 동대문(흥인지문)」下車轉計程車 3 分鐘直達青丘站民宿。'
+      },
+      N6701: {
+        code: 'N6701',
+        direction: '東大門設計廣場 (DDP) 方向',
+        platform: '仁川機場 T1 · 1樓 3B 站牌',
+        recommend: '若住候補 ① 青丘站（備用路線：DDP 下車轉計程車 5 分鐘）',
+        badgeStyle: 'bg-destiCoral/20 border-destiCoral/40',
+        stops: [
+          { name: '仁川機場 T1', time: '起點 (0分)' },
+          { name: '麻浦站', time: '約 50 分鐘' },
+          { name: '首爾站', time: '約 60 分鐘' },
+          { name: '乙支路入口', time: '約 65 分鐘' },
+          { name: '東大門設計廣場', time: '約 70 分鐘' }
+        ],
+        schedules: ['00:10', '01:10', '02:10', '03:10'],
+        note: 'KAL 豪華機場巴士路線，若 N6002 客滿，可改走 3B 站牌搭 N6701 至東大門設計廣場（DDP）再轉計程車回青丘站。'
+      },
+      N6703: {
+        code: 'N6703',
+        direction: '廣渡口站方向（江南・蠶室線）',
+        platform: '仁川機場 T1 · 1樓 3B 站牌',
+        recommend: '江南・COEX・蠶室方向參考路線',
+        badgeStyle: 'bg-destiPurple/20 border-destiPurple/40',
+        stops: [
+          { name: '仁川機場 T1', time: '起點 (0分)' },
+          { name: '瑞來村', time: '約 50 分鐘' },
+          { name: 'COEX', time: '約 65 分鐘' },
+          { name: '蠶室樂天世界', time: '約 70 分鐘' },
+          { name: '江邊站 (科技商場前)', time: '約 80 分鐘' },
+          { name: '廣渡口站極東公寓', time: '約 85 分鐘' }
+        ],
+        schedules: ['00:20', '01:25', '02:30', '03:35'],
+        note: '行經江南瑞來村、COEX 與蠶室方向，本次住宿不在此線，提供作為路線對照參考。'
+      }
+    };
+
+    let activeBusCode = 'N6002';
+
+    function renderNightBus(code) {
+      activeBusCode = code;
+      const tabsEl = document.getElementById('bus-route-tabs');
+      const detailEl = document.getElementById('bus-route-detail');
+      if (!tabsEl || !detailEl) return;
+
+      const codes = ['N6000', 'N6002', 'N6701', 'N6703'];
+      tabsEl.innerHTML = codes.map(c => {
+        const item = nightBusData[c];
+        const isActive = c === activeBusCode;
+        return `
+          <button
+            type="button"
+            role="tab"
+            aria-selected="${isActive}"
+            onclick="renderNightBus('${c}')"
+            class="day-tab ${isActive ? 'active' : ''} py-2.5 px-2 text-center cursor-pointer flex flex-col items-center justify-center"
+          >
+            <span class="font-editorial text-base font-bold leading-tight">${item.code}</span>
+            <span class="text-[11px] opacity-85 mt-0.5 line-clamp-1">${item.direction.replace('方向', '')}</span>
+          </button>
+        `;
+      }).join('');
+
+      const bus = nightBusData[activeBusCode];
+      detailEl.classList.remove('panel-fade');
+      void detailEl.offsetWidth;
+      detailEl.classList.add('panel-fade');
+
+      const stopsHtml = bus.stops.map((st, idx) => {
+        const isLast = idx === bus.stops.length - 1;
+        return `
+          <div class="flex items-center gap-2">
+            <div class="flex flex-col items-center">
+              <span class="w-2.5 h-2.5 rounded-full ${idx === 0 ? 'bg-destiBlue' : 'bg-espresso'}"></span>
+              ${isLast ? '' : '<span class="w-[1.5px] h-5 bg-latte"></span>'}
+            </div>
+            <div class="flex-1 flex items-center justify-between text-xs pb-1">
+              <span class="font-bold text-espresso">${st.name}</span>
+              <span class="text-mocha bg-white border border-latte rounded-full px-2 py-0.5 text-[11px]">${st.time}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const timesHtml = bus.schedules.map(t =>
+        `<span class="font-editorial text-sm font-bold bg-white border border-latte rounded-lg px-2.5 py-1 text-espresso">${t}</span>`
+      ).join('');
+
+      detailEl.innerHTML = `
+        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-latte pb-3">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-editorial text-2xl font-bold text-espresso">${bus.code}</span>
+              <span class="text-sm font-bold text-espresso">（${bus.direction}）</span>
+            </div>
+            <div class="text-xs text-mocha mt-0.5">${bus.recommend}</div>
+          </div>
+          <span class="px-3 py-1 rounded-full border text-xs font-bold text-espresso ${bus.badgeStyle}">
+            📍 ${bus.platform}
+          </span>
+        </div>
+
+        <div>
+          <div class="text-xs font-bold text-espresso mb-2">🚏 運行路線與預估車程：</div>
+          <div class="pl-1">${stopsHtml}</div>
+        </div>
+
+        <div class="bg-white border border-latte rounded-xl p-3 space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-espresso">🕒 仁川機場 T1 夜間發車時刻表（參考）</span>
+            <span class="text-[11px] text-mocha">建議出發前於官網核對</span>
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            ${timesHtml}
+          </div>
+          <p class="text-[11px] text-mocha pt-1 border-t border-latte/60 leading-relaxed">
+            💡 ${bus.note}
+          </p>
+        </div>
+      `;
+    }
+
+    // ============================================================
+    // 2. 每日行程資料（同步最新成員航班與 01/14 16:00 送別忙、豆）
     // ============================================================
     const itineraryData = [
       {
@@ -960,7 +1115,7 @@
               { label: '🚕 計程車', style: 'bg-destiPurple/15 border-destiPurple/30' }
             ],
             mustVisit: false,
-            desc: '若住候補 ① 青丘站：搭深夜巴士 N6002 至東大門(興仁之門)轉計程車 3 分鐘即達；若住候補 ② 禾谷洞：可搭深夜巴士或機場計程車直達江西區，凌晨與忙、豆、袖會合！'
+            desc: '若住候補 ① 青丘站：搭深夜巴士 N6002 至東大門(興仁之門)轉計程車 3 分鐘即達；若住候補 ② 禾谷洞：可搭 N6000 至松亭/鹽倉站轉計程車或機場計程車直達，凌晨與忙、豆、袖會合！'
           }
         ]
       },
@@ -1237,6 +1392,7 @@
       activeDayIndex = index;
       const tabsContainer = document.getElementById('day-tabs');
       const contentContainer = document.getElementById('itinerary-content');
+      if (!tabsContainer || !contentContainer) return;
 
       tabsContainer.innerHTML = itineraryData.map((item, idx) => {
         const isActive = idx === activeDayIndex;
@@ -1302,7 +1458,7 @@
     }
 
     // ============================================================
-    // 2. 出發倒數計時器（2027/01/09 07:05 台灣時間：忙長榮 BR170 起飛）
+    // 3. 出發倒數計時器（2027/01/09 07:05 台灣時間：忙長榮 BR170 起飛）
     // ============================================================
     function updateCountdown() {
       const targetTime = new Date('2027-01-09T07:05:00+08:00').getTime();
@@ -1311,6 +1467,7 @@
 
       const gridEl = document.getElementById('countdown-grid');
       const statusEl = document.getElementById('countdown-status');
+      if (!gridEl || !statusEl) return;
 
       if (now >= endTime) {
         gridEl.classList.add('hidden');
@@ -1339,7 +1496,7 @@
     }
 
     // ============================================================
-    // 3. 可打勾的待辦清單 (localStorage 持久化)
+    // 4. 可打勾的待辦清單 (localStorage 持久化)
     // ============================================================
     const STORAGE_KEY = 'dne_seoul_2027_5members_checklist_v3';
     const defaultChecklist = [
@@ -1374,6 +1531,7 @@
     function renderChecklist() {
       const checkedState = loadCheckedState();
       const listEl = document.getElementById('checklist-items');
+      if (!listEl) return;
       let completedCount = 0;
 
       listEl.innerHTML = defaultChecklist.map(item => {
@@ -1413,19 +1571,23 @@
       renderChecklist();
     }
 
-    document.getElementById('reset-checklist-btn').addEventListener('click', () => {
-      saveCheckedState({});
-      renderChecklist();
-      showToast('已重設所有待辦清單項目');
-    });
+    const resetBtn = document.getElementById('reset-checklist-btn');
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        saveCheckedState({});
+        renderChecklist();
+        showToast('已重設所有待辦清單項目');
+      });
+    }
 
     // ============================================================
-    // 4. 一鍵複製文字與 Toast 提示
+    // 5. 一鍵複製文字與 Toast 提示
     // ============================================================
     let toastTimer = null;
     function showToast(msg) {
       const box = document.getElementById('toast-box');
       const msgEl = document.getElementById('toast-message');
+      if (!box || !msgEl) return;
       msgEl.textContent = msg;
       box.classList.remove('opacity-0');
       box.classList.add('opacity-100');
@@ -1453,170 +1615,17 @@
       document.body.removeChild(textarea);
     }
 
+    // ============================================================
+    // 6. 頁面載入後初始化所有互動功能
+    // ============================================================
     document.addEventListener('DOMContentLoaded', () => {
+      renderNightBus('N6002');
       renderItinerary(0);
       renderChecklist();
       updateCountdown();
       setInterval(updateCountdown, 1000);
     });
-
-        // ============================================================
-    // 5. 仁川機場夜間巴士互動路線與時刻表（依官方圖一、圖二製作）
-    // ============================================================
-    const nightBusData = {
-      N6000: {
-        code: 'N6000',
-        direction: '江南高速巴士客運站方向',
-        platform: '仁川機場 T1 · 1樓 6A 站牌',
-        recommend: '若住候補 ② 禾谷洞（松亭站／鹽倉站下車轉計程車）',
-        badgeStyle: 'bg-destiBlue/20 border-destiBlue/40',
-        stops: [
-          { name: '仁川機場 T1', time: '起點 (0分)' },
-          { name: '松亭站 (송정역)', time: '約 40 分鐘' },
-          { name: '鹽倉站 (염창역)', time: '約 50 分鐘' },
-          { name: '江南高速巴士', time: '約 70 分鐘' }
-        ],
-        schedules: ['23:50', '00:40', '01:30', '02:20', '03:10', '03:50'],
-        note: '往江西區禾谷洞可於「松亭站」或「鹽倉站」下車轉乘計程車（約 8–10 分鐘即達）。'
-      },
-      N6002: {
-        code: 'N6002',
-        direction: '清涼里方向',
-        platform: '仁川機場 T1 · 1樓 6A 站牌',
-        recommend: '★ 若住候補 ① 青丘站（興仁之門下車轉計程車 3 分鐘）',
-        badgeStyle: 'bg-destiPink/25 border-destiPink/45',
-        stops: [
-          { name: '仁川機場 T1', time: '起點 (0分)' },
-          { name: '弘大', time: '約 45 分鐘' },
-          { name: '四季酒店', time: '約 60 分鐘' },
-          { name: '興仁之門 (東大門)', time: '約 75 分鐘' },
-          { name: '清涼里', time: '約 90 分鐘' }
-        ],
-        schedules: ['00:15', '01:05', '02:00', '02:55', '03:45'],
-        note: '令、保 23:30 落地領行李後，搭 00:15 或 01:05 班次最剛好！於「興仁之門 동대문(흥인지문)」下車轉計程車 3 分鐘直達青丘站民宿。'
-      },
-      N6701: {
-        code: 'N6701',
-        direction: '東大門設計廣場 (DDP) 方向',
-        platform: '仁川機場 T1 · 1樓 3B 站牌',
-        recommend: '若住候補 ① 青丘站（備用路線：DDP 下車轉計程車 5 分鐘）',
-        badgeStyle: 'bg-destiCoral/20 border-destiCoral/40',
-        stops: [
-          { name: '仁川機場 T1', time: '起點 (0分)' },
-          { name: '麻浦站', time: '約 50 分鐘' },
-          { name: '首爾站', time: '約 60 分鐘' },
-          { name: '乙支路入口', time: '約 65 分鐘' },
-          { name: '東大門設計廣場', time: '約 70 分鐘' }
-        ],
-        schedules: ['00:10', '01:10', '02:10', '03:10'],
-        note: 'KAL 豪華機場巴士路線，若 N6002 客滿，可改走 3B 站牌搭 N6701 至東大門設計廣場（DDP）再轉計程車回青丘站。'
-      },
-      N6703: {
-        code: 'N6703',
-        direction: '廣渡口站方向（江南・蠶室線）',
-        platform: '仁川機場 T1 · 1樓 3B 站牌',
-        recommend: '江南・COEX・蠶室方向參考路線',
-        badgeStyle: 'bg-destiPurple/20 border-destiPurple/40',
-        stops: [
-          { name: '仁川機場 T1', time: '起點 (0分)' },
-          { name: '瑞來村', time: '約 50 分鐘' },
-          { name: 'COEX', time: '約 65 分鐘' },
-          { name: '蠶室樂天世界', time: '約 70 分鐘' },
-          { name: '江邊站 (科技商場前)', time: '約 80 分鐘' },
-          { name: '廣渡口站極東公寓', time: '約 85 分鐘' }
-        ],
-        schedules: ['00:20', '01:25', '02:30', '03:35'],
-        note: '行經江南瑞來村、COEX 與蠶室方向，本次住宿不在此線，提供作為路線對照參考。'
-      }
-    };
-
-    let activeBusCode = 'N6002';
-
-    function renderNightBus(code) {
-      activeBusCode = code;
-      const tabsEl = document.getElementById('bus-route-tabs');
-      const detailEl = document.getElementById('bus-route-detail');
-      if (!tabsEl || !detailEl) return;
-
-      const codes = ['N6000', 'N6002', 'N6701', 'N6703'];
-      tabsEl.innerHTML = codes.map(c => {
-        const item = nightBusData[c];
-        const isActive = c === activeBusCode;
-        return `
-          <button
-            type="button"
-            role="tab"
-            aria-selected="${isActive}"
-            onclick="renderNightBus('${c}')"
-            class="day-tab ${isActive ? 'active' : ''} py-2.5 px-2 text-center cursor-pointer flex flex-col items-center justify-center"
-          >
-            <span class="font-editorial text-base font-bold leading-tight">${item.code}</span>
-            <span class="text-[11px] opacity-85 mt-0.5 line-clamp-1">${item.direction.replace('方向', '')}</span>
-          </button>
-        `;
-      }).join('');
-
-      const bus = nightBusData[activeBusCode];
-      detailEl.classList.remove('panel-fade');
-      void detailEl.offsetWidth;
-      detailEl.classList.add('panel-fade');
-
-      const stopsHtml = bus.stops.map((st, idx) => {
-        const isLast = idx === bus.stops.length - 1;
-        return `
-          <div class="flex items-center gap-2">
-            <div class="flex flex-col items-center">
-              <span class="w-2.5 h-2.5 rounded-full ${idx === 0 ? 'bg-destiBlue' : 'bg-espresso'}"></span>
-              ${isLast ? '' : '<span class="w-[1.5px] h-5 bg-latte"></span>'}
-            </div>
-            <div class="flex-1 flex items-center justify-between text-xs pb-1">
-              <span class="font-bold text-espresso">${st.name}</span>
-              <span class="text-mocha bg-white border border-latte rounded-full px-2 py-0.5 text-[11px]">${st.time}</span>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      const timesHtml = bus.schedules.map(t =>
-        `<span class="font-editorial text-sm font-bold bg-white border border-latte rounded-lg px-2.5 py-1 text-espresso">${t}</span>`
-      ).join('');
-
-      detailEl.innerHTML = `
-        <div class="flex flex-wrap items-center justify-between gap-2 border-b border-latte pb-3">
-          <div>
-            <div class="flex items-center gap-2">
-              <span class="font-editorial text-2xl font-bold text-espresso">${bus.code}</span>
-              <span class="text-sm font-bold text-espresso">（${bus.direction}）</span>
-            </div>
-            <div class="text-xs text-mocha mt-0.5">${bus.recommend}</div>
-          </div>
-          <span class="px-3 py-1 rounded-full border text-xs font-bold text-espresso ${bus.badgeStyle}">
-            📍 ${bus.platform}
-          </span>
-        </div>
-
-        <!-- 運行路線與預估車程 -->
-        <div>
-          <div class="text-xs font-bold text-espresso mb-2">🚏 運行路線與預估車程：</div>
-          <div class="pl-1">${stopsHtml}</div>
-        </div>
-
-        <!-- 仁川機場 T1 發車時刻表 -->
-        <div class="bg-white border border-latte rounded-xl p-3 space-y-2">
-          <div class="flex items-center justify-between text-xs">
-            <span class="font-bold text-espresso">🕒 仁川機場 T1 夜間發車時刻表（參考）</span>
-            <span class="text-[11px] text-mocha">建議出發前於官網核對</span>
-          </div>
-          <div class="flex flex-wrap gap-1.5">
-            ${timesHtml}
-          </div>
-          <p class="text-[11px] text-mocha pt-1 border-t border-latte/60 leading-relaxed">
-            💡 ${bus.note}
-          </p>
-        </div>
-      `;
-    }
-
   </script>
+
 </body>
 </html>
