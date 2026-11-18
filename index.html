@@ -552,15 +552,26 @@
             <span class="text-[11px] text-mocha">出境大廳 1樓 外側首爾巴士區</span>
           </div>
 
-          <!-- 站牌速查膠囊 -->
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
-            <div class="bg-cream border border-latte rounded-xl px-3 py-2 flex items-center justify-between">
-              <span class="font-bold text-espresso">📍 1F 6A 站牌（靠近 6 號出口）</span>
-              <span class="px-2 py-0.5 rounded-full bg-destiBlue/20 font-bold text-espresso">N6000 · N6002</span>
+  <!-- 站牌速查膠囊（優化排版：文字分層不擠壓、路線標籤不換行） -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+            <div class="bg-cream border border-latte rounded-xl px-3.5 py-2.5 flex items-center justify-between gap-2">
+              <div class="leading-snug">
+                <div class="font-bold text-espresso">📍 1F 6A 站牌</div>
+                <div class="text-[11px] text-mocha mt-0.5">靠近 6 號出口</div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-destiBlue/20 border border-destiBlue/35 font-bold text-espresso whitespace-nowrap shrink-0">
+                N6000 · N6002
+              </span>
             </div>
-            <div class="bg-cream border border-latte rounded-xl px-3 py-2 flex items-center justify-between">
-              <span class="font-bold text-espresso">📍 1F 3B 站牌（靠近 3・4 號出口）</span>
-              <span class="px-2 py-0.5 rounded-full bg-destiPurple/20 font-bold text-espresso">N6701 · N6703</span>
+
+            <div class="bg-cream border border-latte rounded-xl px-3.5 py-2.5 flex items-center justify-between gap-2">
+              <div class="leading-snug">
+                <div class="font-bold text-espresso">📍 1F 3B 站牌</div>
+                <div class="text-[11px] text-mocha mt-0.5">靠近 3・4 號出口</div>
+              </div>
+              <span class="px-2.5 py-1 rounded-full bg-destiPurple/20 border border-destiPurple/35 font-bold text-espresso whitespace-nowrap shrink-0">
+                N6701 · N6703
+              </span>
             </div>
           </div>
 
