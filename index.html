@@ -302,17 +302,17 @@
         </div>
       </div>
 
-            <!-- 多組出發與抵達倒數計時器 -->
+                  <!-- 多組出發與全員集合倒數計時器 -->
       <div class="bg-oatmeal/75 border border-latte rounded-2xl p-4 space-y-3">
         <div class="text-center text-xs tracking-wider text-mocha font-medium">
-          ⏳ 2027 首爾追星出發倒數（即時同步）
+          ⏳ 2027 首爾追星出發＆集合倒數（即時同步）
         </div>
 
-        <!-- 主視覺倒數：距離安妮抵達首爾的日子 (2027/01/09 10:30 KST) -->
+        <!-- 主視覺倒數：主要集合日 2027/01/10 02:00 KST -->
         <div class="bg-white border border-latte rounded-xl p-3 text-center shadow-sm">
           <div class="flex flex-wrap items-center justify-center gap-1.5 mb-2">
-            <span class="px-2 py-0.5 rounded-full bg-evaGreen/15 border border-evaGreen/35 text-[11px] font-bold text-espresso">主集合日</span>
-            <span class="text-xs sm:text-sm font-bold text-espresso">距離安妮抵達首爾的日子（01/09 10:30）</span>
+            <span class="px-2 py-0.5 rounded-full bg-destiPink/20 border border-destiPink/40 text-[11px] font-bold text-espresso">主要集合日</span>
+            <span class="text-xs sm:text-sm font-bold text-espresso">距離全員 5 人首爾集合（01/10 02:00）還有</span>
           </div>
           <div id="cd-main-grid" class="grid grid-cols-4 gap-2 max-w-[320px] mx-auto">
             <div class="bg-cream border border-latte/80 rounded-lg py-1.5 px-1">
@@ -335,22 +335,31 @@
           <p id="cd-main-status" class="hidden text-xs font-bold mt-1.5 text-espresso"></p>
         </div>
 
-        <!-- 雙欄分組起飛倒數：豆、袖 (01/08 07:05) & 保、令 (01/09 20:00) -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-          <!-- 豆、袖 01/08 07:05 起飛 -->
-          <div class="bg-white border border-latte rounded-xl p-3 text-center">
-            <div class="text-xs font-bold text-espresso mb-1">🛫 豆、袖起飛倒數</div>
-            <div class="text-[11px] text-mocha mb-2">01/08 (五) 07:05 長榮 BR170</div>
-            <div id="cd-dousiu-text" class="font-editorial text-base sm:text-lg font-bold text-espresso bg-cream border border-latte/80 rounded-lg py-1.5 px-2">
+        <!-- 三組分批起飛倒數：豆、袖 / 忙 / 保、令 -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+          <!-- 1. 豆、袖 01/08 07:05 起飛 -->
+          <div class="bg-white border border-latte rounded-xl p-2.5 text-center">
+            <div class="text-xs font-bold text-espresso">🛫 豆、袖起飛</div>
+            <div class="text-[10px] text-mocha mt-0.5 mb-1.5">01/08 (五) 07:05 長榮</div>
+            <div id="cd-dousiu-text" class="font-editorial text-sm sm:text-base font-bold text-espresso bg-cream border border-latte/80 rounded-lg py-1 px-1.5">
               --天 --時 --分 --秒
             </div>
           </div>
 
-          <!-- 保、令 01/09 20:00 起飛 -->
-          <div class="bg-white border border-latte rounded-xl p-3 text-center">
-            <div class="text-xs font-bold text-espresso mb-1">🛫 保、令起飛倒數</div>
-            <div class="text-[11px] text-mocha mb-2">01/09 (六) 20:00 台灣虎航</div>
-            <div id="cd-baoling-text" class="font-editorial text-base sm:text-lg font-bold text-espresso bg-cream border border-latte/80 rounded-lg py-1.5 px-2">
+          <!-- 2. 忙 01/09 07:05 起飛 -->
+          <div class="bg-white border border-latte rounded-xl p-2.5 text-center">
+            <div class="text-xs font-bold text-espresso">🛫 忙起飛</div>
+            <div class="text-[10px] text-mocha mt-0.5 mb-1.5">01/09 (六) 07:05 長榮</div>
+            <div id="cd-mang-text" class="font-editorial text-sm sm:text-base font-bold text-espresso bg-cream border border-latte/80 rounded-lg py-1 px-1.5">
+              --天 --時 --分 --秒
+            </div>
+          </div>
+
+          <!-- 3. 保、令 01/09 20:00 起飛 -->
+          <div class="bg-white border border-latte rounded-xl p-2.5 text-center">
+            <div class="text-xs font-bold text-espresso">🛫 保、令起飛</div>
+            <div class="text-[10px] text-mocha mt-0.5 mb-1.5">01/09 (六) 20:00 虎航</div>
+            <div id="cd-baoling-text" class="font-editorial text-sm sm:text-base font-bold text-espresso bg-cream border border-latte/80 rounded-lg py-1 px-1.5">
               --天 --時 --分 --秒
             </div>
           </div>
@@ -1498,7 +1507,7 @@
     }
 
         // ============================================================
-    // 3. 多組出發與抵達倒數計時器
+    // 3. 多組出發與主要集合日倒數計時器
     // ============================================================
     function formatCompactDiff(diff) {
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -1512,8 +1521,8 @@
       const now = Date.now();
       const endTime = new Date('2027-01-15T02:15:00+08:00').getTime();
 
-      // 1) 主倒數：距離安妮抵達首爾的日子（2027/01/09 10:30 韓國時間 KST）
-      const annieArriveTime = new Date('2027-01-09T10:30:00+09:00').getTime();
+      // 1) 主倒數：主要集合日（2027/01/10 02:00 韓國時間 KST）
+      const gatherTime = new Date('2027-01-10T02:00:00+09:00').getTime();
       const gridEl = document.getElementById('cd-main-grid');
       const statusEl = document.getElementById('cd-main-status');
 
@@ -1522,12 +1531,12 @@
           gridEl.classList.add('hidden');
           statusEl.classList.remove('hidden');
           statusEl.textContent = 'DE-STIVAL : THE 15/15 首爾追星之旅圓滿落幕！';
-        } else if (now >= annieArriveTime) {
+        } else if (now >= gatherTime) {
           gridEl.classList.add('hidden');
           statusEl.classList.remove('hidden');
-          statusEl.textContent = '🎉 安妮已抵達首爾！全員集合應援中！';
+          statusEl.textContent = '🎉 忙・令・豆・袖・保 5人全員首爾大集合成功！';
         } else {
-          const diff = annieArriveTime - now;
+          const diff = gatherTime - now;
           const days = Math.floor(diff / (1000 * 60 * 60 * 24));
           const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
           const mins = Math.floor((diff / 1000 / 60) % 60);
@@ -1547,25 +1556,39 @@
         if (now >= endTime) {
           douSiuEl.textContent = '旅程圓滿結束 ✨';
         } else if (now >= douSiuTime) {
-          douSiuEl.textContent = '✈️ 已起飛抵達首爾！';
+          douSiuEl.textContent = '✈️ 已起飛抵韓！';
         } else {
           douSiuEl.textContent = formatCompactDiff(douSiuTime - now);
         }
       }
 
-      // 3) 保、令起飛倒數（2027/01/09 20:00 台灣時間）
+      // 3) 忙起飛倒數（2027/01/09 07:05 台灣時間）
+      const mangTime = new Date('2027-01-09T07:05:00+08:00').getTime();
+      const mangEl = document.getElementById('cd-mang-text');
+      if (mangEl) {
+        if (now >= endTime) {
+          mangEl.textContent = '旅程圓滿結束 ✨';
+        } else if (now >= mangTime) {
+          mangEl.textContent = '✈️ 已起飛抵韓！';
+        } else {
+          mangEl.textContent = formatCompactDiff(mangTime - now);
+        }
+      }
+
+      // 4) 保、令起飛倒數（2027/01/09 20:00 台灣時間）
       const baoLingTime = new Date('2027-01-09T20:00:00+08:00').getTime();
       const baoLingEl = document.getElementById('cd-baoling-text');
       if (baoLingEl) {
         if (now >= endTime) {
           baoLingEl.textContent = '旅程圓滿結束 ✨';
         } else if (now >= baoLingTime) {
-          baoLingEl.textContent = '✈️ 已起飛前往仁川！';
+          baoLingEl.textContent = '✈️ 已起飛抵韓！';
         } else {
           baoLingEl.textContent = formatCompactDiff(baoLingTime - now);
         }
       }
     }
+
 
     // ============================================================
     // 4. 可打勾的待辦清單 (localStorage 持久化)
