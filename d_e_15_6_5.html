@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D&E 15週年首爾追星購物 6天5夜</title>
+  <!-- Google Fonts: Huninn (粉圓體，日系繪本圓潤質感) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Huninn&display=swap" rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            washi: '#FFFCF6',
+            ink: '#3E3A39',
+            coral: '#F2A497',
+            yamabuki: '#F6D27A',
+            aqua: '#A8D3E6',
+            wakana: '#B9DAA5',
+          },
+          fontFamily: {
+            huninn: ['"Huninn"', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* 全域日系繪本風基礎設定：淺色和紙底、墨灰粗線框、平塗無漸層 */
+    :root {
+      --bg-washi: #FFFCF6;
+      --ink-gray: #3E3A39;
+      --coral-pink: #F2A497;
+      --yamabuki-yellow: #F6D27A;
+      --aqua-blue: #A8D3E6;
+      --wakana-green: #B9DAA5;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-washi);
+      color: var(--ink-gray);
+      font-family: 'Huninn', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-washi);
+      color: var(--ink-gray);
+      /* 極細微的繪本紙張點陣紋理（平塗底色上的繪本手感） */
+      background-image: radial-gradient(#3E3A39 0.65px, transparent 0.65px);
+      background-size: 22px 22px;
+      background-position: 0 0;
+      overflow-x: hidden;
+    }
+
+    /* 繪本粗框卡片與硬邊平塗陰影 */
+    .ehon-card {
+      background-color: #FFFCF6;
+      border: 3px solid #3E3A39;
+      border-radius: 22px;
+      box-shadow: 4px 4px 0px #3E3A39;
+    }
+
+    .ehon-card-sm {
+      background-color: #FFFCF6;
+      border: 3px solid #3E3A39;
+      border-radius: 16px;
+      box-shadow: 3px 3px 0px #3E3A39;
+    }
+
+    .ehon-pill {
+      border: 2.5px solid #3E3A39;
+      border-radius: 9999px;
+    }
+
+    .ehon-btn {
+      border: 3px solid #3E3A39;
+      border-radius: 18px;
+      box-shadow: 3px 3px 0px #3E3A39;
+      transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  box-shadow 0.2s ease,
+                  background-color 0.2s ease;
+    }
+
+    .ehon-btn:active {
+      transform: translate(2px, 2px);
+      box-shadow: 1px 1px 0px #3E3A39;
+    }
+
+    /* 日期切換彈跳動畫 */
+    .day-tab {
+      border: 3px solid #3E3A39;
+      border-radius: 18px;
+      background-color: #FFFCF6;
+      box-shadow: 2px 2px 0px #3E3A39;
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                  background-color 0.2s ease,
+                  box-shadow 0.2s ease;
+    }
+
+    .day-tab.active {
+      background-color: #F6D27A;
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 4px 6px 0px #3E3A39;
+    }
+
+    @keyframes panelBounceIn {
+      0% {
+        opacity: 0;
+        transform: translateY(14px) scale(0.97);
+      }
+      65% {
+        opacity: 1;
+        transform: translateY(-3px) scale(1.01);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .panel-bounce {
+      animation: panelBounceIn 0.42s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
+
+    /* 插圖輕輕漂浮／搖擺動畫 */
+    @keyframes gentleFloat {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-5px) rotate(1.5deg);
+      }
+    }
+
+    @keyframes gentleSway {
+      0%, 100% {
+        transform: rotate(-3deg);
+      }
+      50% {
+        transform: rotate(3deg);
+      }
+    }
+
+    @keyframes cloudDrift {
+      0%, 100% {
+        transform: translateX(0px);
+      }
+      50% {
+        transform: translateX(6px);
+      }
+    }
+
+    .anim-float {
+      animation: gentleFloat 3.6s ease-in-out infinite;
+    }
+
+    .anim-float-delay {
+      animation: gentleFloat 4.2s ease-in-out 0.8s infinite;
+    }
+
+    .anim-sway {
+      transform-origin: center bottom;
+      animation: gentleSway 3.2s ease-in-out infinite;
+    }
+
+    .anim-cloud {
+      animation: cloudDrift 5s ease-in-out infinite;
+    }
+
+    /* 登機證虛線撕裂線 */
+    .ticket-divider {
+      border-top: 3px dashed #3E3A39;
+      position: relative;
+    }
+
+    /* 隱藏水平捲軸但保留滑動功能 */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* 區塊錨點補償頂端固定選單高度 */
+    section[id] {
+      scroll-margin-top: 76px;
+    }
+
+    /* 尊重系統「減少動態效果」設定 */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .anim-float,
+      .anim-float-delay,
+      .anim-sway,
+      .anim-cloud,
+      .panel-bounce {
+        animation: none !important;
+      }
+      .ehon-btn,
+      .day-tab {
+        transition: none !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-14 selection:bg-yamabuki selection:text-ink">
+
+  <!-- 1. 頂端固定選單 (Sticky Top Navigation) -->
+  <header class="sticky top-0 z-50 bg-washi/95 backdrop-blur-sm border-b-[3px] border-ink">
+    <nav class="max-w-[640px] mx-auto px-3 py-2.5 flex items-center justify-between gap-1">
+      <a href="#hero" class="nav-link flex-1 py-1.5 px-1 rounded-xl text-center text-xs sm:text-sm font-bold hover:bg-yamabuki/50 active:bg-yamabuki transition-colors flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1">
+        <span aria-hidden="true">🏠</span>
+        <span>首頁</span>
+      </a>
+      <a href="#flights" class="nav-link flex-1 py-1.5 px-1 rounded-xl text-center text-xs sm:text-sm font-bold hover:bg-aqua/50 active:bg-aqua transition-colors flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1">
+        <span aria-hidden="true">✈️</span>
+        <span>航班</span>
+      </a>
+      <a href="#itinerary" class="nav-link flex-1 py-1.5 px-1 rounded-xl text-center text-xs sm:text-sm font-bold hover:bg-coral/50 active:bg-coral transition-colors flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1">
+        <span aria-hidden="true">🗓️</span>
+        <span>行程</span>
+      </a>
+      <a href="#checklist" class="nav-link flex-1 py-1.5 px-1 rounded-xl text-center text-xs sm:text-sm font-bold hover:bg-wakana/50 active:bg-wakana transition-colors flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1">
+        <span aria-hidden="true">✅</span>
+        <span>清單</span>
+      </a>
+      <a href="#stay" class="nav-link flex-1 py-1.5 px-1 rounded-xl text-center text-xs sm:text-sm font-bold hover:bg-yamabuki/50 active:bg-yamabuki transition-colors flex flex-col sm:flex-row items-center justify-center gap-0.5 sm:gap-1">
+        <span aria-hidden="true">🛏️</span>
+        <span>住宿</span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- 主要內容容器 (手機優先，桌面居中如旅遊小手冊) -->
+  <main class="max-w-[640px] mx-auto px-4 pt-5 space-y-8">
+
+    <!-- 2. 首頁插圖 ＋ 標題 ＋ 出發倒數 (Hero Section) -->
+    <section id="hero" class="ehon-card p-5 sm:p-6 relative overflow-hidden">
+      <!-- 頂部貼紙標籤 -->
+      <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+        <span class="ehon-pill bg-aqua px-3 py-1 text-xs sm:text-sm font-bold inline-flex items-center gap-1.5">
+          <span>💙</span> SUPER JUNIOR-D&amp;E
+        </span>
+        <span class="ehon-pill bg-yamabuki px-3 py-1 text-xs sm:text-sm font-bold">
+          2027/01/09 – 01/15
+        </span>
+      </div>
+
+      <!-- 主標題 -->
+      <h1 class="text-2xl sm:text-3xl font-bold leading-snug tracking-wide text-ink mt-1">
+        D&amp;E 15週年首爾追星購物<br class="sm:hidden" /> 6天5夜手冊
+      </h1>
+
+      <!-- 人數動態小卡 -->
+      <div class="mt-3 bg-coral/35 border-[2.5px] border-ink rounded-2xl px-3.5 py-2.5 text-xs sm:text-sm leading-relaxed">
+        <div class="font-bold flex items-center gap-1.5 mb-0.5">
+          <span>👥</span> 旅伴人數動態（總共 5 人）
+        </div>
+        <p>• <span class="underline decoration-2">01/09 深夜 ～ 01/13 (20:30)</span>：<strong>全員 5 人</strong>（3友先到會合）</p>
+        <p>• <span class="underline decoration-2">01/13 (20:30) 後 ～ 01/15</span>：<strong>2 人</strong>（你 ＋ A朋友）</p>
+      </div>
+
+      <!-- 手繪風首爾地標與追星元素 SVG 插圖 -->
+      <div class="my-4 bg-aqua/25 border-[3px] border-ink rounded-[20px] p-3 flex justify-center items-center">
+        <svg viewBox="0 0 420 195" class="w-full max-w-[390px] h-auto" role="img" aria-label="首爾塔、飛機、地鐵與D&E應援手燈手繪插圖">
+          <!-- 雲朵 (左右輕漂) -->
+          <g class="anim-cloud">
+            <path d="M46 48 C46 39, 58 36, 63 42 C68 33, 83 35, 85 45 C93 46, 94 57, 85 58 L48 58 C40 58, 39 49, 46 48 Z"
+                  fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <path d="M325 36 C325 28, 336 26, 340 31 C345 23, 358 25, 360 34 C367 35, 368 44, 360 45 L327 45 C320 45, 319 37, 325 36 Z"
+                  fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          </g>
+
+          <!-- 小星星裝飾 -->
+          <path d="M132 28 L135 35 L142 38 L135 41 L132 48 L129 41 L122 38 L129 35 Z"
+                fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5" stroke-linejoin="round" />
+          <circle cx="294" cy="64" r="4" fill="#F2A497" stroke="#3E3A39" stroke-width="2.5" />
+
+          <!-- 可愛小飛機 (輕微上下浮動) -->
+          <g class="anim-float">
+            <path d="M56 88 L98 76 L112 63 L121 66 L112 80 L132 82 L139 74 L145 77 L139 89 L145 97 L138 100 L130 93 L108 96 L114 111 L105 113 L93 96 L58 98 C50 98, 49 90, 56 88 Z"
+                  fill="#F6D27A" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <circle cx="74" cy="91" r="2.2" fill="#3E3A39" />
+            <circle cx="84" cy="89" r="2.2" fill="#3E3A39" />
+            <circle cx="94" cy="87" r="2.2" fill="#3E3A39" />
+          </g>
+
+          <!-- N首爾塔 (中間地標) -->
+          <g>
+            <!-- 南山小山丘 -->
+            <path d="M132 172 Q210 126 288 172 Z" fill="#B9DAA5" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+            <!-- 塔身支柱 -->
+            <rect x="202" y="76" width="16" height="68" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+            <!-- 觀景台雙層 -->
+            <rect x="186" y="60" width="48" height="12" rx="6" fill="#F2A497" stroke="#3E3A39" stroke-width="3" />
+            <rect x="191" y="72" width="38" height="9" rx="4" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3" />
+            <!-- 塔尖天線 -->
+            <line x1="210" y1="22" x2="210" y2="60" stroke="#3E3A39" stroke-width="3.5" stroke-linecap="round" />
+            <circle cx="210" cy="20" r="4.5" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5" />
+          </g>
+
+          <!-- D&E 應援手燈 ＋ 音符 (右側輕輕搖擺) -->
+          <g class="anim-sway">
+            <!-- 手燈握把 -->
+            <rect x="336" y="106" width="14" height="36" rx="7" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+            <rect x="338" y="114" width="10" height="6" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2" />
+            <!-- 手燈發光球體 -->
+            <circle cx="343" cy="90" r="19" fill="#A8D3E6" stroke="#3E3A39" stroke-width="3" />
+            <!-- 愛心/光芒 -->
+            <path d="M343 97 C343 97, 333 90, 333 84 C333 80, 337 78, 340 80 C342 81, 343 83, 343 83 C343 83, 344 81, 346 80 C349 78, 353 80, 353 84 C353 90, 343 97, 343 97 Z"
+                  fill="#F2A497" stroke="#3E3A39" stroke-width="2.2" stroke-linejoin="round" />
+            <!-- 音符 -->
+            <path d="M372 68 L372 52 L384 49 L384 65" fill="none" stroke="#3E3A39" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round" />
+            <circle cx="369" cy="69" r="3.5" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.2" />
+            <circle cx="381" cy="66" r="3.5" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.2" />
+          </g>
+
+          <!-- 可愛首爾地鐵列車 (底部行駛) -->
+          <g class="anim-float-delay">
+            <rect x="34" y="148" width="118" height="32" rx="12" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+            <!-- 色帶 -->
+            <rect x="36" y="164" width="114" height="7" fill="#A8D3E6" />
+            <line x1="35" y1="164" x2="151" y2="164" stroke="#3E3A39" stroke-width="2.5" />
+            <!-- 車窗 -->
+            <rect x="46" y="153" width="18" height="8" rx="3" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.2" />
+            <rect x="70" y="153" width="22" height="8" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.2" />
+            <rect x="98" y="153" width="22" height="8" rx="3" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2.2" />
+            <rect x="126" y="153" width="16" height="8" rx="3" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.2" />
+          </g>
+
+          <!-- 咖啡杯小插圖 (右下) -->
+          <g>
+            <rect x="276" y="152" width="24" height="26" rx="5" fill="#F2A497" stroke="#3E3A39" stroke-width="3" />
+            <rect x="273" y="147" width="30" height="6" rx="3" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2.5" />
+            <rect x="277" y="159" width="22" height="9" fill="#FFFCF6" stroke="#3E3A39" stroke-width="2" />
+          </g>
+
+          <!-- 地面基準線 -->
+          <line x1="18" y1="180" x2="402" y2="180" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" />
+        </svg>
+      </div>
+
+      <!-- 出發倒數計時器 -->
+      <div class="bg-yamabuki/45 border-[3px] border-ink rounded-2xl p-3.5 text-center">
+        <div class="text-xs sm:text-sm font-bold mb-2 flex items-center justify-center gap-1.5">
+          <span>⏳</span> 距離台灣虎航起飛（2027/01/09 20:00）還有
+        </div>
+        <div id="countdown-grid" class="grid grid-cols-4 gap-2 max-w-[360px] mx-auto">
+          <div class="bg-washi border-[2.5px] border-ink rounded-xl py-2 px-1">
+            <div id="cd-days" class="text-xl sm:text-2xl font-bold text-ink">--</div>
+            <div class="text-[11px] font-bold">天</div>
+          </div>
+          <div class="bg-washi border-[2.5px] border-ink rounded-xl py-2 px-1">
+            <div id="cd-hours" class="text-xl sm:text-2xl font-bold text-ink">--</div>
+            <div class="text-[11px] font-bold">時</div>
+          </div>
+          <div class="bg-washi border-[2.5px] border-ink rounded-xl py-2 px-1">
+            <div id="cd-mins" class="text-xl sm:text-2xl font-bold text-ink">--</div>
+            <div class="text-[11px] font-bold">分</div>
+          </div>
+          <div class="bg-washi border-[2.5px] border-ink rounded-xl py-2 px-1">
+            <div id="cd-secs" class="text-xl sm:text-2xl font-bold text-ink">--</div>
+            <div class="text-[11px] font-bold">秒</div>
+          </div>
+        </div>
+        <p id="countdown-status" class="hidden text-sm font-bold mt-2 text-ink"></p>
+      </div>
+    </section>
+
+    <!-- 3. 航班資訊卡片 (Flight Boarding Passes) -->
+    <section id="flights" class="space-y-4">
+      <div class="flex items-center gap-2.5 px-1">
+        <span class="w-9 h-9 rounded-2xl bg-aqua border-[3px] border-ink flex items-center justify-center text-lg shadow-[2px_2px_0_#3E3A39]">✈️</span>
+        <h2 class="text-xl sm:text-2xl font-bold">航班資訊</h2>
+      </div>
+
+      <!-- 去程登機證 -->
+      <article class="ehon-card overflow-hidden">
+        <div class="bg-aqua px-4 py-2.5 border-b-[3px] border-ink flex items-center justify-between">
+          <span class="font-bold text-sm sm:text-base flex items-center gap-1.5">
+            <span>🛫</span> 去程航班｜2027/01/09 (六)
+          </span>
+          <span class="ehon-pill bg-washi px-2.5 py-0.5 text-xs font-bold">台灣虎航 Tigerair</span>
+        </div>
+        <div class="p-4 sm:p-5">
+          <div class="flex items-center justify-between text-center gap-2">
+            <div class="flex-1">
+              <div class="text-xs font-bold opacity-80">台北桃園</div>
+              <div class="text-2xl sm:text-3xl font-bold tracking-wider">TPE</div>
+              <div class="mt-1 inline-block bg-yamabuki border-2 border-ink rounded-lg px-2 py-0.5 text-sm font-bold">20:00 起飛</div>
+            </div>
+            <div class="flex flex-col items-center px-2">
+              <span class="text-xs font-bold mb-1">約 2.5 小時</span>
+              <div class="flex items-center gap-1 text-ink font-bold">
+                <span class="w-2 h-2 rounded-full bg-ink"></span>
+                <span class="w-10 sm:w-14 border-t-[3px] border-dashed border-ink"></span>
+                <span class="text-lg">➔</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="text-xs font-bold opacity-80">首爾仁川</div>
+              <div class="text-2xl sm:text-3xl font-bold tracking-wider">ICN</div>
+              <div class="mt-1 inline-block bg-coral border-2 border-ink rounded-lg px-2 py-0.5 text-sm font-bold">23:30 抵達</div>
+            </div>
+          </div>
+          <div class="ticket-divider mt-4 pt-3 text-xs sm:text-sm space-y-1">
+            <p><strong>乘客：</strong>你 ＋ A朋友（2人同行）</p>
+            <p class="opacity-90">💡 <strong>會合說明：</strong>另外 3 位朋友於 01/09 前已先抵達首爾，深夜抵達青丘站民宿後全員 5 人會合！</p>
+          </div>
+        </div>
+      </article>
+
+      <!-- 回程 ① & ② 登機證 -->
+      <div class="grid grid-cols-1 gap-4">
+        <!-- 回程①：3位旅伴先返台 -->
+        <article class="ehon-card overflow-hidden">
+          <div class="bg-wakana px-4 py-2 border-b-[3px] border-ink flex items-center justify-between">
+            <span class="font-bold text-sm">🛬 回程 ①（3位旅伴先返台）</span>
+            <span class="ehon-pill bg-washi px-2.5 py-0.5 text-xs font-bold">2027/01/14 (四)</span>
+          </div>
+          <div class="p-4 text-xs sm:text-sm space-y-1.5">
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <span class="font-bold text-base">ICN 仁川 ➔ TPE 桃園</span>
+              <span class="bg-yamabuki border-2 border-ink rounded-lg px-2.5 py-0.5 font-bold">00:30 起飛</span>
+            </div>
+            <p>⏰ <strong>01/13 (三) 20:30</strong> 從青丘站民宿出發赴機場（搭 5 號線至孔德轉 AREX）。</p>
+          </div>
+        </article>
+
+        <!-- 回程②：你 + A朋友返台 -->
+        <article class="ehon-card overflow-hidden">
+          <div class="bg-coral px-4 py-2.5 border-b-[3px] border-ink flex items-center justify-between">
+            <span class="font-bold text-sm sm:text-base flex items-center gap-1.5">
+              <span>🛬</span> 回程 ②（你＋A朋友返台）
+            </span>
+            <span class="ehon-pill bg-washi px-2.5 py-0.5 text-xs font-bold">2027/01/15 (五)</span>
+          </div>
+          <div class="p-4 sm:p-5">
+            <div class="flex items-center justify-between text-center gap-2">
+              <div class="flex-1">
+                <div class="text-xs font-bold opacity-80">首爾仁川</div>
+                <div class="text-2xl sm:text-3xl font-bold tracking-wider">ICN</div>
+                <div class="mt-1 inline-block bg-yamabuki border-2 border-ink rounded-lg px-2 py-0.5 text-sm font-bold">00:30 起飛</div>
+              </div>
+              <div class="flex flex-col items-center px-2">
+                <span class="text-xs font-bold mb-1">台灣虎航</span>
+                <div class="flex items-center gap-1 text-ink font-bold">
+                  <span class="w-2 h-2 rounded-full bg-ink"></span>
+                  <span class="w-10 sm:w-14 border-t-[3px] border-dashed border-ink"></span>
+                  <span class="text-lg">➔</span>
+                </div>
+              </div>
+              <div class="flex-1">
+                <div class="text-xs font-bold opacity-80">台北桃園</div>
+                <div class="text-2xl sm:text-3xl font-bold tracking-wider">TPE</div>
+                <div class="mt-1 inline-block bg-wakana border-2 border-ink rounded-lg px-2 py-0.5 text-sm font-bold">02:15 抵達</div>
+              </div>
+            </div>
+            <div class="ticket-divider mt-4 pt-3 text-xs sm:text-sm">
+              <p>⏰ <strong>01/14 (四) 20:15</strong> 從青丘站領行李出發赴仁川機場 T1，滿載而歸！</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. 每日行程 (Interactive Date Tabs + Timeline) -->
+    <section id="itinerary" class="space-y-4">
+      <div class="flex items-center justify-between px-1">
+        <div class="flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-2xl bg-coral border-[3px] border-ink flex items-center justify-center text-lg shadow-[2px_2px_0_#3E3A39]">🗓️</span>
+          <h2 class="text-xl sm:text-2xl font-bold">每日行程</h2>
+        </div>
+        <span class="text-xs font-bold bg-washi border-2 border-ink rounded-full px-2.5 py-1">點擊日期切換</span>
+      </div>
+
+      <!-- 上方日期切換列 (横排按鈕，切換具彈跳效果) -->
+      <div id="day-tabs" role="tablist" aria-label="選擇行程日期" class="grid grid-cols-3 sm:grid-cols-6 gap-2 pt-1">
+        <!-- 由 JS 動態生成 6 個日期頁籤 -->
+      </div>
+
+      <!-- 交通標籤圖例說明 -->
+      <div class="flex flex-wrap items-center gap-1.5 px-1 text-[11px] font-bold">
+        <span class="opacity-80">交通標籤：</span>
+        <span class="ehon-pill bg-aqua px-2 py-0.5">🚇 地鐵</span>
+        <span class="ehon-pill bg-yamabuki px-2 py-0.5">🚄 AREX快線</span>
+        <span class="ehon-pill bg-coral px-2 py-0.5">🚌 機場巴士</span>
+        <span class="ehon-pill bg-wakana px-2 py-0.5">🚕 計程車/接駁</span>
+        <span class="ehon-pill bg-washi px-2 py-0.5">🚶 步行</span>
+      </div>
+
+      <!-- 下方時間軸內容容器 -->
+      <div id="itinerary-content" role="tabpanel" class="ehon-card p-4 sm:p-5">
+        <!-- 由 JS 動態渲染每日時間軸 -->
+      </div>
+    </section>
+
+    <!-- 5. 可打勾的待辦清單 (Interactive Checklist with localStorage) -->
+    <section id="checklist" class="ehon-card p-4 sm:p-5 space-y-4">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-2xl bg-wakana border-[3px] border-ink flex items-center justify-center text-lg shadow-[2px_2px_0_#3E3A39]">✅</span>
+          <div>
+            <h2 class="text-xl sm:text-2xl font-bold">行前＆當地待辦清單</h2>
+            <p class="text-xs opacity-80">勾選狀態會自動儲存在手機瀏覽器中</p>
+          </div>
+        </div>
+        <button id="reset-checklist-btn" type="button" class="ehon-btn bg-washi px-2.5 py-1 text-xs font-bold hover:bg-coral/40">
+          重設
+        </button>
+      </div>
+
+      <!-- 進度條 -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between text-xs font-bold">
+          <span>完成進度</span>
+          <span id="checklist-progress-text">0 / 9 項完成</span>
+        </div>
+        <div class="w-full h-4 bg-washi border-[2.5px] border-ink rounded-full overflow-hidden p-0.5">
+          <div id="checklist-progress-bar" class="h-full bg-wakana rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- 清單項目列表 -->
+      <ul id="checklist-items" class="space-y-2.5">
+        <!-- 由 JS 渲染可勾選項目 -->
+      </ul>
+    </section>
+
+    <!-- 6. 住宿資訊卡片 (Accommodation Card with Copy-to-Clipboard) -->
+    <section id="stay" class="ehon-card p-4 sm:p-5 space-y-4 relative overflow-hidden">
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2.5">
+          <span class="w-9 h-9 rounded-2xl bg-yamabuki border-[3px] border-ink flex items-center justify-center text-lg shadow-[2px_2px_0_#3E3A39]">🛏️</span>
+          <h2 class="text-xl sm:text-2xl font-bold">住宿資訊（連住 5 晚）</h2>
+        </div>
+        <!-- 可愛小屋 SVG 插圖 -->
+        <svg viewBox="0 0 64 56" class="w-12 h-11 anim-float" aria-hidden="true">
+          <polygon points="32,6 6,28 58,28" fill="#F2A497" stroke="#3E3A39" stroke-width="3" stroke-linejoin="round" />
+          <rect x="13" y="28" width="38" height="22" rx="3" fill="#FFFCF6" stroke="#3E3A39" stroke-width="3" />
+          <rect x="27" y="36" width="10" height="14" rx="2" fill="#F6D27A" stroke="#3E3A39" stroke-width="2.5" />
+          <rect x="17" y="33" width="6" height="6" rx="1" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2" />
+          <rect x="41" y="33" width="6" height="6" rx="1" fill="#A8D3E6" stroke="#3E3A39" stroke-width="2" />
+        </svg>
+      </div>
+
+      <!-- 避雷紅框警告 -->
+      <div class="bg-coral/40 border-[3px] border-ink rounded-2xl p-3.5 text-xs sm:text-sm leading-relaxed">
+        <div class="font-bold text-sm sm:text-base flex items-center gap-1.5 mb-1">
+          <span>⚠️</span> 導航重要避雷（千萬別跑錯！）
+        </div>
+        <p>Airbnb 系統自動中文翻譯誤顯示為「清潭站」，實際位置在首爾中區<strong>「青丘站 (청구역 / Cheonggu Station)」</strong>！導航務必搜尋韓文 <strong>청구역</strong>。</p>
+      </div>
+
+      <!-- 詳細住宿資料 -->
+      <div class="space-y-3 text-xs sm:text-sm">
+        <div class="ehon-card-sm p-3 space-y-1">
+          <div class="text-xs font-bold opacity-75">住宿名稱與合法登記</div>
+          <div class="font-bold text-sm sm:text-base">首爾中區合法共享住宿</div>
+          <div class="inline-block bg-aqua/50 border-2 border-ink rounded-lg px-2 py-0.5 text-xs font-bold">
+            執照號碼：HA250611-005
+          </div>
+        </div>
+
+        <div class="ehon-card-sm p-3 space-y-1">
+          <div class="text-xs font-bold opacity-75">入住與退房期間（全體連住 5 晚）</div>
+          <div class="font-bold">2027/01/09 (六) 深夜入住 ～ 2027/01/14 (四) 11:00 退房</div>
+          <p class="opacity-90">• 01/13 晚上送別 3 位旅伴後，你與 A 朋友續住同一間至 01/14 退房。</p>
+        </div>
+
+        <div class="ehon-card-sm p-3 space-y-1.5">
+          <div class="text-xs font-bold opacity-75">最近地鐵站＆交通優勢</div>
+          <div class="font-bold text-sm sm:text-base">🚇 青丘站 (청구역) 5號線・6號線交會，出口步行 1 分鐘</div>
+          <p class="opacity-90">• 5 號線一班車直達金浦機場站、孔德站（轉 AREX）；步行 8–12 分鐘即達東大門商圈與金豬食堂！</p>
+        </div>
+
+        <!-- 一鍵複製韓文地鐵站名與計程車用語 -->
+        <div class="bg-yamabuki/40 border-[3px] border-ink rounded-2xl p-3.5 space-y-2.5">
+          <div class="font-bold text-xs sm:text-sm flex items-center gap-1.5">
+            <span>🚕</span> 深夜搭計程車／導航一鍵複製卡
+          </div>
+          <div class="flex items-center justify-between gap-2 bg-washi border-2 border-ink rounded-xl px-3 py-2">
+            <div>
+              <div class="text-[11px] opacity-75">Naver Map 搜尋站名</div>
+              <div class="font-bold text-sm sm:text-base">청구역</div>
+            </div>
+            <button type="button" onclick="copyText('청구역', '已複製站名：청구역')" class="ehon-btn bg-aqua px-3 py-1.5 text-xs font-bold shrink-0">
+              複製
+            </button>
+          </div>
+          <div class="flex items-center justify-between gap-2 bg-washi border-2 border-ink rounded-xl px-3 py-2">
+            <div>
+              <div class="text-[11px] opacity-75">給計程車司機看（請載我去青丘站）</div>
+              <div class="font-bold text-sm sm:text-base">청구역으로 가주세요</div>
+            </div>
+            <button type="button" onclick="copyText('청구역으로 가주세요', '已複製韓文：청구역으로 가주세요')" class="ehon-btn bg-wakana px-3 py-1.5 text-xs font-bold shrink-0">
+              複製
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 頁尾繪本簽名 -->
+  <footer class="max-w-[640px] mx-auto px-4 mt-8 text-center text-xs font-bold opacity-80 space-y-1">
+    <p>💙 SUPER JUNIOR-D&amp;E 15th Anniversary Seoul Trip 💙</p>
+    <p>2027/01/09 – 01/15｜祝旅途平安順利、應援大成功！</p>
+  </footer>
+
+  <!-- 自訂無阻塞提示框 (Toast Message Box，絕不使用 alert) -->
+  <div id="toast-box" role="status" aria-live="polite"
+       class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 pointer-events-none opacity-0 transition-opacity duration-200">
+    <div class="bg-ink text-washi border-[3px] border-yamabuki rounded-full px-4 py-2 text-xs sm:text-sm font-bold shadow-[3px_3px_0_#3E3A39] whitespace-nowrap">
+      <span id="toast-message">已複製！</span>
+    </div>
+  </div>
+
+  <script>
+    // ==========================================
+    // 1. 每日行程資料 (完整對應最新定案行程)
+    // ==========================================
+    const itineraryData = [
+      {
+        dayLabel: 'Day 1',
+        dateLabel: '1/9 (六)',
+        fullTitle: 'Day 1｜01/09 (週六)',
+        badge: '2人抵達會合5人',
+        badgeColor: 'bg-aqua',
+        summary: '你＋A朋友深夜飛抵仁川，搭深夜巴士轉計程車直達青丘站民宿，與先到的 3 位朋友全員會合！',
+        events: [
+          {
+            time: '20:00 - 23:30',
+            title: '桃園機場起飛 (台灣虎航) ➔ 抵達仁川機場',
+            transports: [{ label: '✈️ 航班', color: 'bg-aqua' }],
+            mustVisit: false,
+            desc: '20:00 TPE 起飛，預計 23:30 抵達仁川國際機場 T1，辦理入境與領取行李。'
+          },
+          {
+            time: '00:15',
+            title: '搭乘機場深夜巴士 N6002 至「東大門(興仁之門)」下車',
+            transports: [{ label: '🚌 機場巴士', color: 'bg-coral' }],
+            mustVisit: false,
+            desc: '站名：동대문 흥인지문。車程約 75 分鐘，刷 T-money 卡車資約 17,000 韓元。'
+          },
+          {
+            time: '01:30',
+            title: '轉乘計程車直達青丘站民宿與先到的 3 友會合',
+            transports: [
+              { label: '🚕 計程車', color: 'bg-wakana' },
+              { label: '🚶 步行1分', color: 'bg-washi' }
+            ],
+            mustVisit: false,
+            desc: '車程僅 3–4 分鐘，起跳價約 4,800 韓元（2人平分約台幣 55 元）。給司機看韓文：「청구역으로 가주세요」，下車走 1 分鐘進民宿休息！'
+          }
+        ]
+      },
+      {
+        dayLabel: 'Day 2',
+        dateLabel: '1/10 (日)',
+        fullTitle: 'Day 2｜01/10 (週日)',
+        badge: '5人 演唱會日',
+        badgeColor: 'bg-coral',
+        summary: '整趟旅程最高潮！全員 5 人前往仁川 INSPIRE Arena 參加 D&E 15週年演唱會！',
+        events: [
+          {
+            time: '10:30',
+            title: '青丘／新堂周邊吃平價紫菜包飯或超商早餐',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: false,
+            desc: '睡飽補足體力，在民宿附近輕鬆吃早餐、檢查應援手燈與電池。'
+          },
+          {
+            time: '11:30',
+            title: '出發前往仁川 INSPIRE Arena',
+            transports: [
+              { label: '🚇 地鐵5號線', color: 'bg-aqua' },
+              { label: '🚄 AREX快線', color: 'bg-yamabuki' },
+              { label: '🚌 免費接駁車', color: 'bg-wakana' }
+            ],
+            mustVisit: false,
+            desc: '青丘站搭 5 號線（4站）至孔德站轉乘 AREX 普通車至仁川機場 T1，再到 1 樓 2C 或 14C 站牌搭 INSPIRE 免費接駁巴士（0元！），總車程約 75 分鐘。'
+          },
+          {
+            time: '13:00',
+            title: '場外領官方周邊、收集免費應援小卡手幅、5人大合照',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: false,
+            desc: '提前到場外感受氣氛、領取周邊與粉絲應援物，拍下 5 人紀念合照。'
+          },
+          {
+            time: '16:00 - 19:30',
+            title: 'D&E 15週年演唱會',
+            transports: [],
+            mustVisit: true,
+            desc: '仁川 INSPIRE Arena！揮舞手燈盡情享受東海與銀赫的 15 週年舞台！'
+          },
+          {
+            time: '19:30',
+            title: '散場回市區 ➔ 21:30 吃慶功烤肉／部隊鍋',
+            transports: [
+              { label: '🚌 免費接駁車', color: 'bg-wakana' },
+              { label: '🚄 AREX快線', color: 'bg-yamabuki' },
+              { label: '🚇 地鐵5號線', color: 'bg-aqua' }
+            ],
+            mustVisit: false,
+            desc: '搭免費接駁車回 T1（若人多可 5 人分搭 2 台計程車回 T1，約台幣 115 元/人）→ 搭 AREX 至孔德轉 5 號線回青丘站，晚上 21:30 在新堂／東大門吃慶功大餐！'
+          }
+        ]
+      },
+      {
+        dayLabel: 'Day 3',
+        dateLabel: '1/11 (一)',
+        fullTitle: 'Day 3｜01/11 (週一)',
+        badge: '5人 SM追星一條線',
+        badgeColor: 'bg-yamabuki',
+        summary: '沿著首爾東側地鐵線一路順遊：SM 曠野 ➔ 聖水東海咖啡 ➔ 建大藝聲衣櫥＆鼠兔，零繞路！',
+        events: [
+          {
+            time: '10:00',
+            title: '從青丘站出發前往首爾林站',
+            transports: [{ label: '🚇 地鐵5號線＋盆唐線', color: 'bg-aqua' }],
+            mustVisit: false,
+            desc: '青丘站搭 5 號線（2站）至往十里站，站內轉乘水仁·盆唐線（1站）至「首爾林站」4/5號出口，車程約 20 分鐘。'
+          },
+          {
+            time: '10:30',
+            title: 'SM大樓 KWANGYA@SEOUL (曠野)',
+            transports: [{ label: '🚶 出口直通', color: 'bg-washi' }],
+            mustVisit: true,
+            desc: '趁 10:30 剛開門人最少時朝聖！拍大型螢幕應援牆、採買官方周邊（滿 15,000 韓元記得帶護照現場退稅）。'
+          },
+          {
+            time: '12:30',
+            title: '午餐：傳說中的聖水馬鈴薯排骨湯',
+            transports: [
+              { label: '🚇 地鐵', color: 'bg-aqua' },
+              { label: '🚶 步行12分', color: 'bg-washi' }
+            ],
+            mustVisit: false,
+            desc: '前往聖水站，5 人合點大鍋馬鈴薯排骨湯分食超划算！'
+          },
+          {
+            time: '14:00',
+            title: '李東海 HARU COFFEE HOUSE ＋ 逛聖水洞潮牌香氛街',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: true,
+            desc: '朝聖東海新店 HARU COFFEE HOUSE 喝咖啡打卡，接著在聖水洞逛潮流選物店與香氛品牌。'
+          },
+          {
+            time: '17:30',
+            title: '金鐘雲(藝聲) Cafe Armoire 衣櫥咖啡廳',
+            transports: [{ label: '🚇 地鐵2號線', color: 'bg-aqua' }],
+            mustVisit: true,
+            desc: '搭 2 號線往東 2 站至「建大入口站」，趁日落前後光線最美時拍照、享用招牌甜點（營業至 23:00）。'
+          },
+          {
+            time: '19:00',
+            title: '建大美食街平價晚餐',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: false,
+            desc: '在熱鬧的建大商圈享用晚餐。'
+          },
+          {
+            time: '20:15',
+            title: '金鐘雲(藝聲) Mouse Rabbit 鼠兔咖啡廳',
+            transports: [
+              { label: '🚶 步行2分', color: 'bg-washi' },
+              { label: '🚇 地鐵2號線→5號線', color: 'bg-aqua' }
+            ],
+            mustVisit: true,
+            desc: '距離衣櫥僅步行 2 分鐘，營業至 23:00。悠閒喝飲料坐坐後，約 21:30 搭 2 號線轉 5 號線回青丘站民宿。'
+          }
+        ]
+      },
+      {
+        dayLabel: 'Day 4',
+        dateLabel: '1/12 (二)',
+        fullTitle: 'Day 4｜01/12 (週二)',
+        badge: '5人 祈福＆血拼日',
+        badgeColor: 'bg-wakana',
+        summary: '由南往北順路玩回民宿：江南奉恩寺買手鍊 ➔ 明洞 chaakan 買鞋換錢 ➔ 東大門夜購走路回家！',
+        events: [
+          {
+            time: '09:45',
+            title: '出發前往江南三成站',
+            transports: [{ label: '🚇 地鐵5號線→2號線', color: 'bg-aqua' }],
+            mustVisit: false,
+            desc: '青丘站搭 5 號線（1站）至東大門歷史文化公園站，轉 2 號線直達「三成站」（或轉 9 號線至奉恩寺站），車程約 25 分鐘。'
+          },
+          {
+            time: '10:15',
+            title: '奉恩寺祈福 ＋ 買十二生肖幸運手鍊',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: true,
+            desc: '參拜奉恩寺並購買人氣十二生肖幸運手鍊（約 5,000～10,000 韓元，記得提前準備韓元現金）。'
+          },
+          {
+            time: '11:30',
+            title: 'COEX Mall 星空圖書館拍照 ＋ 地下美食街午餐',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: false,
+            desc: '過馬路進 COEX Mall 吹暖氣拍免費「星空圖書館」，並在地下美食街享用午餐。'
+          },
+          {
+            time: '14:30',
+            title: '明洞 chaakan 平價女鞋 ＋ 換錢掃貨',
+            transports: [{ label: '🚇 地鐵', color: 'bg-aqua' }],
+            mustVisit: true,
+            desc: '明洞站 6 號出口，地址：首爾特別市中區明洞8娜街25號（滿 15,000 韓元帶護照現場退稅！）。順路去換錢所換匯、逛 12 層樓大創與 Olive Young。'
+          },
+          {
+            time: '20:15',
+            title: '東大門夜購掃貨 ＋ 陳玉華一隻雞',
+            transports: [
+              { label: '🚇 地鐵4號線', color: 'bg-aqua' },
+              { label: '🚶 散步回民宿', color: 'bg-washi' }
+            ],
+            mustVisit: true,
+            desc: '搭 4 號線 2 站至東大門歷史文化公園站，主攻 nyu·nyu、MIMILINE 飾品與批發服飾（5人超好湊批發價！），宵夜吃陳玉華一隻雞，逛完直接散步 8–12 分鐘回青丘民宿！'
+          }
+        ]
+      },
+      {
+        dayLabel: 'Day 5',
+        dateLabel: '1/13 (三)',
+        fullTitle: 'Day 5｜01/13 (週三)',
+        badge: '5人 → 20:30送別3友',
+        badgeColor: 'bg-coral',
+        summary: '首爾西側一條線：5 號線直達金浦厲旭森林咖啡 ➔ 回程順路弘大訂製刷具 ➔ 金豬食堂送別 3 位旅伴！',
+        events: [
+          {
+            time: '09:45',
+            title: '出發前往金浦',
+            transports: [
+              { label: '🚇 地鐵5號線直達', color: 'bg-aqua' },
+              { label: '🚕 大型計程車', color: 'bg-wakana' }
+            ],
+            mustVisit: false,
+            desc: '青丘站搭 5 號線一班車直達「金浦機場站」（約 50 分鐘），再轉金浦黃金線至雲陽站或叫一台大型計程車 (Venti)。'
+          },
+          {
+            time: '11:00',
+            title: '金厲旭 Forest for Rest 森林咖啡廳',
+            transports: [],
+            mustVisit: true,
+            desc: '避開週一二公休！在店內享用早午餐、喝咖啡，並與招牌長頸鹿造景拍照打卡。'
+          },
+          {
+            time: '14:15',
+            title: '回程順路前往弘大入口站',
+            transports: [{ label: '🚄 AREX機場快線', color: 'bg-yamabuki' }],
+            mustVisit: false,
+            desc: '從金浦機場站搭 AREX 普通車往首爾方向坐 2 站，僅 14 分鐘直達「弘大入口站」！'
+          },
+          {
+            time: '15:00',
+            title: 'Revoir Custom Brush 訂製刷具',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: true,
+            desc: '地址：首爾特別市麻浦區臥牛山路91號。客製專屬刷具，記得提前上官方 IG 確認預約規則與營業時間。'
+          },
+          {
+            time: '18:00',
+            title: '民宿旁「金豬食堂」5人送別大餐',
+            transports: [{ label: '🚇 地鐵2號線', color: 'bg-aqua' }],
+            mustVisit: false,
+            desc: '搭 2 號線回新堂／青丘，享用米其林烤肉名店金豬食堂（記得一早用 CatchTable 線上抽號碼牌！）。'
+          },
+          {
+            time: '20:30',
+            title: '送別 3 位朋友赴機場（你＋A朋友續住青丘民宿）',
+            transports: [
+              { label: '🚇 地鐵5號線', color: 'bg-aqua' },
+              { label: '🚄 AREX快線', color: 'bg-yamabuki' }
+            ],
+            mustVisit: false,
+            desc: '3 位朋友回民宿拿行李，從青丘站搭 5 號線至孔德轉 AREX 去仁川機場（搭 01/14 00:30 班機）；你與 A 朋友繼續留在青丘民宿休息。'
+          }
+        ]
+      },
+      {
+        dayLabel: 'Day 6',
+        dateLabel: '1/14~15',
+        fullTitle: 'Day 6｜01/14 (週四) ~ 01/15 (週五)',
+        badge: '2人 悠閒收尾',
+        badgeColor: 'bg-aqua',
+        summary: '你與 A 朋友的 2 人悠閒自由時光，最後採買伴手禮裝箱，晚間搭 AREX 前往仁川機場返台！',
+        events: [
+          {
+            time: '11:00',
+            title: '民宿退房並寄放行李',
+            transports: [{ label: '🚶 步行', color: 'bg-washi' }],
+            mustVisit: false,
+            desc: '提前與房東確認行李暫放民宿玄關至 20:00，或寄放在青丘站／孔德站大型投幣置物櫃。'
+          },
+          {
+            time: '12:00',
+            title: '2人自由補貨時光：益善洞韓屋村 ／ 首爾站樂天超市',
+            transports: [{ label: '🚇 地鐵5號線', color: 'bg-aqua' }],
+            mustVisit: false,
+            desc: '搭 5 號線僅 2 站至「鍾路3街站」逛益善洞韓屋村喝下午茶、拍人生四格；或前往「首爾站樂天超市」把海苔、泡麵、零食伴手禮一次買齊裝箱。'
+          },
+          {
+            time: '20:15',
+            title: '領行李出發前往仁川機場 T1',
+            transports: [
+              { label: '🚇 地鐵5號線', color: 'bg-aqua' },
+              { label: '🚄 AREX快線', color: 'bg-yamabuki' }
+            ],
+            mustVisit: false,
+            desc: '回青丘站領取行李 → 搭 5 號線（4站）至孔德站轉 AREX 普通車直達仁川機場 T1，約 21:30 抵達辦理登機與機場退稅。'
+          },
+          {
+            time: '00:30',
+            title: '01/15 (週五) 台灣虎航起飛返台',
+            transports: [{ label: '✈️ 航班', color: 'bg-coral' }],
+            mustVisit: false,
+            desc: '00:30 仁川起飛，預計台灣時間 02:15 抵達桃園機場，滿載回憶歸國！'
+          }
+        ]
+      }
+    ];
+
+    let activeDayIndex = 0;
+
+    // 渲染日期頁籤與時間軸
+    function renderItinerary(index) {
+      activeDayIndex = index;
+      const tabsContainer = document.getElementById('day-tabs');
+      const contentContainer = document.getElementById('itinerary-content');
+
+      // 更新按鈕狀態
+      tabsContainer.innerHTML = itineraryData.map((item, idx) => {
+        const isActive = idx === activeDayIndex;
+        return `
+          <button
+            type="button"
+            role="tab"
+            aria-selected="${isActive}"
+            onclick="renderItinerary(${idx})"
+            class="day-tab ${isActive ? 'active' : ''} py-2 px-1.5 text-center cursor-pointer flex flex-col items-center justify-center"
+          >
+            <span class="text-xs sm:text-sm font-bold leading-tight">${item.dayLabel}</span>
+            <span class="text-[11px] font-bold opacity-85 mt-0.5">${item.dateLabel}</span>
+          </button>
+        `;
+      }).join('');
+
+      // 重新觸發內容卡片彈跳動畫
+      const day = itineraryData[activeDayIndex];
+      contentContainer.classList.remove('panel-bounce');
+      void contentContainer.offsetWidth; // 強制 reflow
+      contentContainer.classList.add('panel-bounce');
+
+      const eventsHtml = day.events.map((ev, idx) => {
+        const isLast = idx === day.events.length - 1;
+        const transportBadges = ev.transports.map(t =>
+          `<span class="ehon-pill ${t.color} px-2 py-0.5 text-[11px] font-bold inline-flex items-center">${t.label}</span>`
+        ).join('');
+
+        const mustBadge = ev.mustVisit
+          ? `<span class="ehon-pill bg-coral px-2.5 py-0.5 text-[11px] font-bold inline-flex items-center gap-0.5 shadow-[1.5px_1.5px_0_#3E3A39]">★ 必去</span>`
+          : '';
+
+        return `
+          <div class="relative pl-7 ${isLast ? '' : 'pb-6'}">
+            <!-- 時間軸垂直線 -->
+            ${isLast ? '' : '<div class="absolute left-[9px] top-4 bottom-0 w-[3px] bg-ink"></div>'}
+            <!-- 時間軸節點圓點 -->
+            <div class="absolute left-0 top-1.5 w-[21px] h-[21px] rounded-full border-[3px] border-ink ${ev.mustVisit ? 'bg-coral' : 'bg-yamabuki'}"></div>
+
+            <!-- 單筆行程內容卡 -->
+            <div class="${ev.mustVisit ? 'bg-yamabuki/30 border-[2.5px] border-ink rounded-2xl p-3' : 'pt-0.5'}">
+              <div class="flex flex-wrap items-center gap-1.5 mb-1">
+                <span class="bg-ink text-washi rounded-lg px-2 py-0.5 text-xs font-bold tracking-wide">${ev.time}</span>
+                ${mustBadge}
+                ${transportBadges}
+              </div>
+              <h3 class="text-base sm:text-lg font-bold leading-snug text-ink">${ev.title}</h3>
+              <p class="text-xs sm:text-sm leading-relaxed opacity-90 mt-1">${ev.desc}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      contentContainer.innerHTML = `
+        <div class="border-b-[3px] border-ink pb-3 mb-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="text-lg sm:text-xl font-bold">${day.fullTitle}</h3>
+            <span class="ehon-pill ${day.badgeColor} px-3 py-0.5 text-xs font-bold">${day.badge}</span>
+          </div>
+          <p class="text-xs sm:text-sm mt-1.5 opacity-90 leading-relaxed">${day.summary}</p>
+        </div>
+        <div class="pt-1">
+          ${eventsHtml}
+        </div>
+      `;
+    }
+
+    // ==========================================
+    // 2. 出發倒數計時器 (目標：2027/01/09 20:00 台灣時間)
+    // ==========================================
+    function updateCountdown() {
+      const targetTime = new Date('2027-01-09T20:00:00+08:00').getTime();
+      const endTime = new Date('2027-01-15T02:15:00+08:00').getTime();
+      const now = Date.now();
+
+      const gridEl = document.getElementById('countdown-grid');
+      const statusEl = document.getElementById('countdown-status');
+
+      if (now >= endTime) {
+        gridEl.classList.add('hidden');
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = '🎉 D&E 15週年首爾追星之旅圓滿落幕！';
+        return;
+      }
+
+      if (now >= targetTime) {
+        gridEl.classList.add('hidden');
+        statusEl.classList.remove('hidden');
+        statusEl.textContent = '💙 首爾追星之旅進行中！盡情應援與血拼吧！';
+        return;
+      }
+
+      const diff = targetTime - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const mins = Math.floor((diff / 1000 / 60) % 60);
+      const secs = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-mins').textContent = String(mins).padStart(2, '0');
+      document.getElementById('cd-secs').textContent = String(secs).padStart(2, '0');
+    }
+
+    // ==========================================
+    // 3. 可打勾的待辦清單 (localStorage 持久化)
+    // ==========================================
+    const STORAGE_KEY = 'dne_seoul_2027_checklist_v1';
+    const defaultChecklist = [
+      { id: 'c1', text: '私訊 Airbnb 房東確認 01/10 凌晨 01:30 自助入住密碼' },
+      { id: 'c2', text: '確認青丘站 (청구역) 哪個出口離民宿最近且有電梯' },
+      { id: 'c3', text: '確認 01/14 退房後行李能否暫放民宿玄關至 20:00' },
+      { id: 'c4', text: '預約弘大 Revoir Custom Brush 訂製刷具時段 (IG)' },
+      { id: 'c5', text: '下載必備 App：Naver Map、Uber / Kakao T、CatchTable' },
+      { id: 'c6', text: '01/13 早上用 CatchTable 線上抽「金豬食堂」號碼牌' },
+      { id: 'c7', text: '隨身攜帶護照正本（購物滿 15,000 韓元現場退稅用）' },
+      { id: 'c8', text: '準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
+      { id: 'c9', text: '準備 T-money 交通卡並儲值（搭深夜巴士 N6002 與地鐵）' }
+    ];
+
+    function loadCheckedState() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        return saved ? JSON.parse(saved) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function saveCheckedState(state) {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {
+        // 忽略無痕模式儲存限制
+      }
+    }
+
+    function renderChecklist() {
+      const checkedState = loadCheckedState();
+      const listEl = document.getElementById('checklist-items');
+      let completedCount = 0;
+
+      listEl.innerHTML = defaultChecklist.map(item => {
+        const isChecked = !!checkedState[item.id];
+        if (isChecked) completedCount++;
+
+        return `
+          <li>
+            <label class="flex items-start gap-3 p-2.5 rounded-2xl border-[2.5px] border-ink cursor-pointer transition-colors ${isChecked ? 'bg-wakana/35' : 'bg-washi hover:bg-yamabuki/20'}">
+              <input
+                type="checkbox"
+                ${isChecked ? 'checked' : ''}
+                onchange="toggleChecklistItem('${item.id}')"
+                class="sr-only"
+              />
+              <span class="w-6 h-6 mt-0.5 rounded-lg border-[2.5px] border-ink flex items-center justify-center shrink-0 ${isChecked ? 'bg-wakana' : 'bg-washi'}">
+                ${isChecked ? '<svg viewBox="0 0 20 20" class="w-4 h-4"><path d="M4 10.5 L8 14.5 L16 6" fill="none" stroke="#3E3A39" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>' : ''}
+              </span>
+              <span class="text-xs sm:text-sm font-bold leading-snug ${isChecked ? 'line-through opacity-65' : ''}">
+                ${item.text}
+              </span>
+            </label>
+          </li>
+        `;
+      }).join('');
+
+      const total = defaultChecklist.length;
+      const pct = Math.round((completedCount / total) * 100);
+      document.getElementById('checklist-progress-text').textContent = `${completedCount} / ${total} 項完成`;
+      document.getElementById('checklist-progress-bar').style.width = `${pct}%`;
+    }
+
+    function toggleChecklistItem(id) {
+      const state = loadCheckedState();
+      state[id] = !state[id];
+      saveCheckedState(state);
+      renderChecklist();
+    }
+
+    document.getElementById('reset-checklist-btn').addEventListener('click', () => {
+      saveCheckedState({});
+      renderChecklist();
+      showToast('已重設所有待辦清單項目');
+    });
+
+    // ==========================================
+    // 4. 一鍵複製文字與 Toast 提示
+    // ==========================================
+    let toastTimer = null;
+    function showToast(msg) {
+      const box = document.getElementById('toast-box');
+      const msgEl = document.getElementById('toast-message');
+      msgEl.textContent = msg;
+      box.classList.remove('opacity-0');
+      box.classList.add('opacity-100');
+
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        box.classList.remove('opacity-100');
+        box.classList.add('opacity-0');
+      }, 2200);
+    }
+
+    function copyText(text, successMsg) {
+      const textarea = document.createElement('textarea');
+      textarea.value = text;
+      textarea.style.position = 'fixed';
+      textarea.style.opacity = '0';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showToast(successMsg);
+      } catch (err) {
+        showToast('請長按文字手動複製：' + text);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    // 初始化頁面
+    document.addEventListener('DOMContentLoaded', () => {
+      renderItinerary(0);
+      renderChecklist();
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+    });
+  </script>
+</body>
+</html>
