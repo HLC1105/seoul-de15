@@ -174,23 +174,26 @@
 
   <!-- 1. 頂端極簡雜誌導覽列 -->
   <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-latte">
-    <nav aria-label="頁面快速導覽" class="max-w-[640px] mx-auto px-2 py-2.5 flex items-center justify-between gap-0.5">
-      <a href="#hero" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+    <nav aria-label="頁面快速導覽" class="max-w-[640px] mx-auto px-1.5 py-2.5 flex items-center justify-between gap-0.5 overflow-x-auto">
+      <a href="#hero" class="shrink-0 px-2 py-1.5 rounded-full text-center text-[11px] sm:text-xs font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         首頁
       </a>
-      <a href="#flights" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#packing" class="shrink-0 px-2 py-1.5 rounded-full text-center text-[11px] sm:text-xs font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+        行前準備
+      </a>
+      <a href="#flights" class="shrink-0 px-2 py-1.5 rounded-full text-center text-[11px] sm:text-xs font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         成員航班
       </a>
-      <a href="#night-bus" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#night-bus" class="shrink-0 px-2 py-1.5 rounded-full text-center text-[11px] sm:text-xs font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         夜間巴士
       </a>
-      <a href="#itinerary" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#itinerary" class="shrink-0 px-2 py-1.5 rounded-full text-center text-[11px] sm:text-xs font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         每日行程
       </a>
-      <a href="#checklist" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
-        行前清單
+      <a href="#checklist" class="shrink-0 px-2 py-1.5 rounded-full text-center text-[11px] sm:text-xs font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+        代辦清單
       </a>
-      <a href="#stay" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#stay" class="shrink-0 px-2 py-1.5 rounded-full text-center text-[11px] sm:text-xs font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         候補住宿
       </a>
     </nav>
@@ -368,6 +371,35 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- 2.5 行前準備清單（配合首爾一月嚴寒氣候 ＋ 演唱會追星裝備，位於倒數後面、航班前面） -->
+    <section id="packing" class="cafe-card p-5 sm:p-6 space-y-4">
+      <div class="flex items-start justify-between gap-2">
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="font-serif text-xl sm:text-2xl font-bold text-espresso">行前準備（首爾1月天氣＆追星裝備）</h2>
+          </div>
+          <p class="text-xs text-mocha mt-0.5">首爾 1 月平均約 -6°C ～ 2°C（室外乾冷、室內暖氣強），可打勾記錄打包進度</p>
+        </div>
+        <button id="reset-packing-btn" type="button" class="cafe-btn bg-cream px-3 py-1 text-xs text-mocha hover:text-espresso shrink-0">
+          重設
+        </button>
+      </div>
+
+      <!-- 進度條 -->
+      <div class="space-y-1.5">
+        <div class="flex justify-between text-xs text-mocha">
+          <span>打包進度</span>
+          <span id="packing-progress-text" class="font-medium text-espresso">0 / 12 項完成</span>
+        </div>
+        <div class="w-full h-2 bg-oatmeal rounded-full overflow-hidden">
+          <div id="packing-progress-bar" class="h-full bg-destiBlue rounded-full transition-all duration-300" style="width: 0%"></div>
+        </div>
+      </div>
+
+      <!-- 兩大分類：首爾一月保暖穿搭＆保濕 ＋ D&E 追星必備工具 -->
+      <div id="packing-items" class="space-y-4"></div>
     </section>
 
     <!-- 3. 成員航班 -->
@@ -557,7 +589,7 @@
       </article>
     </section>
 
-    <!-- 3.5 仁川機場夜間巴士指南（互動點選路線顯示時刻表＋T1搭乘區地圖） -->
+    <!-- 3.5 仁川機場夜間巴士指南 -->
     <section id="night-bus" class="space-y-4">
       <div class="flex flex-wrap items-baseline justify-between gap-2 px-1">
         <div>
@@ -572,20 +604,13 @@
       </div>
 
       <article class="cafe-card p-5 sm:p-6 space-y-5">
-        <!-- 4 條官方夜間巴士互動按鈕列 -->
         <div>
           <div class="text-xs font-bold text-mocha mb-2">請點選欲查詢的運行路線：</div>
-          <div id="bus-route-tabs" role="tablist" aria-label="仁川夜間巴士路線選擇" class="grid grid-cols-2 sm:grid-cols-4 gap-2">
-            <!-- 由 JS 動態生成 N6000 / N6002 / N6701 / N6703 按鈕 -->
-          </div>
+          <div id="bus-route-tabs" role="tablist" aria-label="仁川夜間巴士路線選擇" class="grid grid-cols-2 sm:grid-cols-4 gap-2"></div>
         </div>
 
-        <!-- 點選路線後動態展開的「路線圖 ＋ 乘車處 ＋ 時刻表」面板 -->
-        <div id="bus-route-detail" role="tabpanel" class="cafe-subcard p-4 sm:p-5 space-y-4">
-          <!-- 由 JS 動態渲染 -->
-        </div>
+        <div id="bus-route-detail" role="tabpanel" class="cafe-subcard p-4 sm:p-5 space-y-4"></div>
 
-        <!-- 仁川機場第一航廈 (T1) 1F 夜間巴士搭乘區地圖 -->
         <div class="border-t border-latte pt-4 space-y-2.5">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div class="font-bold text-xs sm:text-sm text-espresso">
@@ -594,7 +619,6 @@
             <span class="text-[11px] text-mocha">出境大廳 1樓 外側首爾巴士區</span>
           </div>
 
-          <!-- 站牌速查膠囊 -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
             <div class="bg-cream border border-latte rounded-xl px-3.5 py-2.5 flex items-center justify-between gap-2">
               <div class="leading-snug">
@@ -617,7 +641,6 @@
             </div>
           </div>
 
-          <!-- 官方搭乘區地圖圖片框（若上傳 airportmap.png 至 GitHub 會自動顯示原圖） -->
           <div class="bg-white border border-latte p-2 rounded-xl overflow-hidden shadow-sm">
             <img
               src="airportmap.png"
@@ -654,22 +677,22 @@
       <div id="itinerary-content" role="tabpanel" class="cafe-card p-5 sm:p-6"></div>
     </section>
 
-    <!-- 5. 行前＆當地待辦清單 -->
+    <!-- 5. 行前＆當地代辦清單 -->
     <section id="checklist" class="cafe-card p-5 sm:p-6 space-y-4">
       <div class="flex items-start justify-between gap-2">
         <div>
-          <h2 class="font-serif text-xl sm:text-2xl font-bold text-espresso">行前＆當地待辦清單</h2>
-          <p class="text-xs text-mocha mt-0.5">點擊即可打勾，紀錄會自動儲存在手機裡</p>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-espresso">行前＆當地代辦清單</h2>
+          <p class="text-xs text-mocha mt-0.5">訂房確認、搶號碼牌、換錢與退稅任務提醒</p>
         </div>
-        <button id="reset-checklist-btn" type="button" class="cafe-btn bg-cream px-3 py-1 text-xs text-mocha hover:text-espresso">
-          重設清單
+        <button id="reset-checklist-btn" type="button" class="cafe-btn bg-cream px-3 py-1 text-xs text-mocha hover:text-espresso shrink-0">
+          重設
         </button>
       </div>
 
       <div class="space-y-1.5">
         <div class="flex justify-between text-xs text-mocha">
-          <span>準備進度</span>
-          <span id="checklist-progress-text" class="font-medium text-espresso">0 / 11 項完成</span>
+          <span>任務進度</span>
+          <span id="checklist-progress-text" class="font-medium text-espresso">0 / 10 項完成</span>
         </div>
         <div class="w-full h-2 bg-oatmeal rounded-full overflow-hidden">
           <div id="checklist-progress-bar" class="h-full bg-espresso rounded-full transition-all duration-300" style="width: 0%"></div>
@@ -679,7 +702,7 @@
       <ul id="checklist-items" class="space-y-2"></ul>
     </section>
 
-    <!-- 6. 候補住宿（卡位二選一：含照片、地址、房價總額與每人分攤明細） -->
+    <!-- 6. 候補住宿（卡位二選一） -->
     <section id="stay" class="cafe-card p-5 sm:p-6 space-y-5">
       <div class="flex items-baseline justify-between">
         <div>
@@ -689,19 +712,16 @@
         <span class="font-editorial italic text-sm text-mocha">Accommodation</span>
       </div>
 
-      <!-- 兩間候補住宿完整比較卡片 -->
       <div class="grid grid-cols-1 gap-6">
 
-        <!-- ================= 候補住宿 ①：中區新堂/青丘站（다산로29길 14） ================= -->
+        <!-- ================= 候補住宿 ① ================= -->
         <article class="cafe-subcard p-4 sm:p-5 space-y-4 relative">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <span class="px-3 py-0.5 rounded-full bg-espresso text-cream text-xs font-bold">候補 ①｜中區青丘站雙臥室民宿</span>
             <span class="px-2.5 py-0.5 rounded-full bg-oatmeal border border-latte text-[11px] font-medium text-espresso">5號線・6號線交會｜3張雙人床</span>
           </div>
 
-          <!-- 雙拍立得質感房型照片框 -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <!-- 房間 1 -->
             <div class="bg-white border border-latte p-2 pb-2.5 rounded-xl shadow-sm">
               <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-oatmeal/70 relative flex items-center justify-center">
                 <img
@@ -721,7 +741,6 @@
               </div>
             </div>
 
-            <!-- 房間 2 -->
             <div class="bg-white border border-latte p-2 pb-2.5 rounded-xl shadow-sm">
               <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-oatmeal/70 relative flex items-center justify-center">
                 <img
@@ -742,7 +761,6 @@
             </div>
           </div>
 
-          <!-- 房價總額與每人分攤明細 -->
           <div class="bg-white border border-latte rounded-2xl p-3.5 space-y-2.5">
             <div class="flex items-center justify-between border-b border-latte/70 pb-2">
               <span class="text-xs font-bold text-espresso">💰 5 晚房價總額</span>
@@ -764,12 +782,10 @@
             </div>
           </div>
 
-          <!-- 位置與導航避雷 -->
           <div class="bg-destiCoral/15 border border-destiCoral/35 rounded-xl px-3 py-2.5 text-xs text-espresso/90 leading-relaxed">
             ⚠️ <strong>導航提醒：</strong>Airbnb 中文翻譯誤顯示「清潭站」，實際位於首爾中區<strong>「青丘站 (청구역)」</strong>出口 1 分鐘（401號房），步行 8–12 分鐘可達東大門商圈與金豬食堂。
           </div>
 
-          <!-- 住宿 ① 完整地址與一鍵複製 -->
           <div class="space-y-2 text-xs">
             <div class="flex items-center justify-between gap-2 bg-white border border-latte rounded-xl px-3 py-2">
               <div class="min-w-0">
@@ -788,16 +804,14 @@
           </div>
         </article>
 
-        <!-- ================= 候補住宿 ②：江西區禾谷洞（23-56 Hwagok-ro 35-gil 302호） ================= -->
+        <!-- ================= 候補住宿 ② ================= -->
         <article class="cafe-subcard p-4 sm:p-5 space-y-4 relative">
           <div class="flex flex-wrap items-center justify-between gap-2">
             <span class="px-3 py-0.5 rounded-full bg-destiBlue/25 border border-destiBlue/45 text-espresso text-xs font-bold">候補 ②｜江西區禾谷洞雙臥室民宿</span>
             <span class="px-2.5 py-0.5 rounded-full bg-oatmeal border border-latte text-[11px] font-medium text-espresso">近仁川＆金浦機場｜3張雙人床</span>
           </div>
 
-          <!-- 雙拍立得質感房型照片框 -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-            <!-- 房間 1 -->
             <div class="bg-white border border-latte p-2 pb-2.5 rounded-xl shadow-sm">
               <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-oatmeal/70 relative flex items-center justify-center">
                 <img
@@ -817,7 +831,6 @@
               </div>
             </div>
 
-            <!-- 房間 2 -->
             <div class="bg-white border border-latte p-2 pb-2.5 rounded-xl shadow-sm">
               <div class="aspect-[4/3] w-full overflow-hidden rounded-lg bg-oatmeal/70 relative flex items-center justify-center">
                 <img
@@ -838,7 +851,6 @@
             </div>
           </div>
 
-          <!-- 房價總額與每人分攤明細 -->
           <div class="bg-white border border-latte rounded-2xl p-3.5 space-y-2.5">
             <div class="flex items-center justify-between border-b border-latte/70 pb-2">
               <span class="text-xs font-bold text-espresso">💰 5 晚房價總額</span>
@@ -860,12 +872,10 @@
             </div>
           </div>
 
-          <!-- 位置筆記 -->
           <div class="bg-white/80 border border-latte rounded-xl px-3 py-2.5 text-xs text-mocha leading-relaxed">
             📍 <strong class="text-espresso">位置特色（302號房）：</strong>位於首爾江西區禾谷洞（郵遞區號 07696），靠近地鐵 5 號線（喜鵲山站／禾谷站生活圈），往返<strong>仁川機場（演唱會場館）</strong>與<strong>金浦（厲旭森林咖啡）</strong>車程更近！
           </div>
 
-          <!-- 住宿 ② 完整地址與一鍵複製 -->
           <div class="space-y-2 text-xs">
             <div class="flex items-center justify-between gap-2 bg-white border border-latte rounded-xl px-3 py-2">
               <div class="min-w-0">
@@ -967,7 +977,120 @@
 
   <script>
     // ============================================================
-    // 1. 仁川機場夜間巴士互動路線與時刻表
+    // 1. 行前準備清單（配合首爾一月嚴寒氣候 ＋ 演唱會追星裝備）
+    // ============================================================
+    const PACKING_STORAGE_KEY = 'dne_seoul_2027_packing_v1';
+    const packingCategories = [
+      {
+        category: '🧥 首爾 1 月天氣穿搭＆防寒保濕（約 -6°C ～ 2°C）',
+        badgeStyle: 'bg-destiBlue/15 border-destiBlue/35',
+        items: [
+          { id: 'p1', text: '防風長版羽絨外套或厚羊毛大衣（戶外寒風刺骨，蓋過臀部最保暖）' },
+          { id: 'p2', text: '洋蔥式內搭：極暖發熱衣＋針織毛衣（地鐵與室內暖氣極強，方便穿脫）' },
+          { id: 'p3', text: '防寒三寶：圍巾、毛帽／耳罩、可觸控滑手機保暖手套' },
+          { id: 'p4', text: '防滑好走的靴子或厚底運動鞋＋保暖厚襪（避免結冰路面滑倒）' },
+          { id: 'p5', text: '暖暖包（手握式＋貼式，演唱會場外排隊領周邊必備）' },
+          { id: 'p6', text: '高保濕護唇膏、護手霜、保濕乳液與口罩（1月首爾極乾燥防冷風）' }
+        ]
+      },
+      {
+        category: '💙 D&E 15週年演唱會＆追星必備工具',
+        badgeStyle: 'bg-destiPink/20 border-destiPink/40',
+        items: [
+          { id: 'p7', text: 'SUPER JUNIOR 官方應援手燈（出發前務必先測試藍牙與亮燈）' },
+          { id: 'p8', text: '手燈備用 AAA 電池（建議帶 2 組全新電池，避免開演沒電）' },
+          { id: 'p9', text: '大容量行動電源＋充電線（低溫手機掉電快，拍場外應援與導航必備）' },
+          { id: 'p10', text: '韓國圓腳兩孔轉接頭（220V 雙圓孔，確認吹風機與充電器支援國際電壓）' },
+          { id: 'p11', text: 'A4 硬殼資料夾／透明小卡收納冊（裝演唱會免費應援手幅與小卡不折損）' },
+          { id: 'p12', text: '護照正本、機票住宿憑證、韓國網卡／eSIM（現場滿 15,000 韓元退稅必帶）' }
+        ]
+      }
+    ];
+
+    function loadPackingState() {
+      try {
+        const saved = localStorage.getItem(PACKING_STORAGE_KEY);
+        return saved ? JSON.parse(saved) : {};
+      } catch (e) {
+        return {};
+      }
+    }
+
+    function savePackingState(state) {
+      try {
+        localStorage.setItem(PACKING_STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function renderPackingList() {
+      const state = loadPackingState();
+      const container = document.getElementById('packing-items');
+      if (!container) return;
+
+      let totalCount = 0;
+      let completedCount = 0;
+
+      container.innerHTML = packingCategories.map(group => {
+        const itemsHtml = group.items.map(item => {
+          totalCount++;
+          const isChecked = !!state[item.id];
+          if (isChecked) completedCount++;
+
+          return `
+            <li>
+              <label class="flex items-start gap-3 p-2.5 rounded-xl border transition-colors cursor-pointer ${isChecked ? 'bg-oatmeal/70 border-latte' : 'bg-cream/60 border-latte/80 hover:bg-oatmeal/40'}">
+                <input
+                  type="checkbox"
+                  ${isChecked ? 'checked' : ''}
+                  onchange="togglePackingItem('${item.id}')"
+                  class="sr-only"
+                />
+                <span class="w-5 h-5 mt-0.5 rounded-md border flex items-center justify-center shrink-0 transition-colors ${isChecked ? 'bg-destiBlue border-destiBlue' : 'bg-white border-mocha/60'}">
+                  ${isChecked ? '<svg viewBox="0 0 20 20" class="w-3.5 h-3.5"><path d="M4 10.5 L8 14.5 L16 6" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' : ''}
+                </span>
+                <span class="text-xs sm:text-sm leading-snug ${isChecked ? 'line-through text-mocha' : 'text-espresso font-medium'}">
+                  ${item.text}
+                </span>
+              </label>
+            </li>
+          `;
+        }).join('');
+
+        return `
+          <div class="space-y-2">
+            <div class="inline-block px-3 py-1 rounded-full border text-xs font-bold text-espresso ${group.badgeStyle}">
+              ${group.category}
+            </div>
+            <ul class="space-y-1.5">
+              ${itemsHtml}
+            </ul>
+          </div>
+        `;
+      }).join('');
+
+      const pct = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0;
+      document.getElementById('packing-progress-text').textContent = `${completedCount} / ${totalCount} 項完成`;
+      document.getElementById('packing-progress-bar').style.width = `${pct}%`;
+    }
+
+    function togglePackingItem(id) {
+      const state = loadPackingState();
+      state[id] = !state[id];
+      savePackingState(state);
+      renderPackingList();
+    }
+
+    const resetPackingBtn = document.getElementById('reset-packing-btn');
+    if (resetPackingBtn) {
+      resetPackingBtn.addEventListener('click', () => {
+        savePackingState({});
+        renderPackingList();
+        showToast('已重設行前準備打包清單');
+      });
+    }
+
+    // ============================================================
+    // 2. 仁川機場夜間巴士互動路線與時刻表
     // ============================================================
     const nightBusData = {
       N6000: {
@@ -1122,7 +1245,7 @@
     }
 
     // ============================================================
-    // 2. 每日行程資料（完整納入雙重哈魯、1/12分組行動、1/13弘大送機、1/14金浦厲旭）
+    // 3. 每日行程資料
     // ============================================================
     const itineraryData = [
       {
@@ -1309,13 +1432,13 @@
           },
           {
             time: '20:00',
-            title: '東大門夜購掃貨 ➔ 散步回青丘民宿',
+            title: '東大門夜購掃貨 ＋ 陳玉華一隻雞 ➔ 散步回青丘民宿',
             transports: [
               { label: '🚇 地鐵4號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
               { label: '🚶 散步8-12分', style: 'bg-oatmeal border-latte' }
             ],
             mustVisit: true,
-            desc: '搭 4 號線至東大門（僅 2 站／車程 5 分鐘），開逛 nyu·nyu、MIMILINE 飾品與批發服飾（4 人湊同款 2 件批發價），逛完直接散步走回青丘站民宿（步行約 8–12 分鐘）。'
+            desc: '搭 4 號線至東大門（僅 2 站／車程 5 分鐘），開逛 nyu·nyu、MIMILINE 飾品與批發服飾（4 人湊同款 2 件批發價），宵夜合吃 陳玉華一隻雞，逛完直接散步走回青丘站民宿（步行約 8–12 分鐘）。'
           }
         ]
       },
@@ -1325,7 +1448,7 @@
         fullTitle: 'Day 5｜01/13 (週三)',
         badge: '4 人 → 16:00 送別忙、豆',
         badgeStyle: 'bg-destiPink/15 text-espresso border-destiPink/30',
-        summary: '4 人睡飽逛弘大＋訂製刷具，15:45–16:00 弘大站直接搭 AREX 送別「忙、豆」赴機場（搭 19:45 班機）。',
+        summary: '4 人睡飽逛弘大＋訂製刷具，15:45–16:00 弘大站直接搭 AREX 送別「忙、豆」赴機場（搭 19:45 班機），晚上「令、保」2 人吃金豬食堂！',
         events: [
           {
             time: '10:30',
@@ -1355,6 +1478,13 @@
             mustVisit: false,
             desc: '因為 弘大入口站 本身就是 機場快線（AREX） 車站（直達仁川機場只要 52 分鐘），忙、豆 直接從弘大站領行李搭 AREX 去機場最順路（若行李放青丘，最晚 15:30 需先回青丘拿行李再去孔德轉 AREX）。'
           },
+          {
+            time: '17:30',
+            title: '【令、保】2 人回民宿旁吃「金豬食堂」',
+            transports: [{ label: '🚇 地鐵2號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
+            mustVisit: false,
+            desc: '搭 2 號線回新堂／青丘，享用米其林烤肉名店「金豬食堂（금돼지식당）」（早上記得用 CatchTable 線上抽號碼牌），晚上繼續續住青丘民宿。'
+          }
         ]
       },
       {
@@ -1482,7 +1612,7 @@
     }
 
     // ============================================================
-    // 3. 多組出發與主要集合日倒數計時器
+    // 4. 多組出發與主要集合日倒數計時器
     // ============================================================
     function formatCompactDiff(diff) {
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -1565,21 +1695,20 @@
     }
 
     // ============================================================
-    // 4. 可打勾的待辦清單 (localStorage 持久化)
+    // 5. 行前＆當地代辦清單（任務事項）
     // ============================================================
-    const STORAGE_KEY = 'dne_seoul_2027_5members_checklist_v5';
+    const STORAGE_KEY = 'dne_seoul_2027_5members_tasks_v1';
     const defaultChecklist = [
       { id: 'c0', text: '【袖】購買 2027/01/11 (一) 返台回程機票（建議選晚班機，白天可完整參與聖水與建大行程）' },
       { id: 'c1', text: '【全員】近出發日拍板決定候補 ①（青丘站）或候補 ②（禾谷洞）並退掉另一間' },
       { id: 'c2', text: '【豆、袖】01/08 提前抵達向房東確認門鎖密碼、暖氣與電梯出口' },
       { id: 'c3', text: '私訊房東確認 01/10 凌晨 02:00 令、保入住與 01/14 退房暫放行李' },
-      { id: 'c4', text: '預約弘大 Revoir Custom Brush 訂製刷具時段 (IG)' },
+      { id: 'c4', text: '預約 01/13 弘大 Revoir Custom Brush 訂製刷具時段 (IG)' },
       { id: 'c5', text: '下載必備 App：Naver Map、Uber / Kakao T、CatchTable' },
       { id: 'c6', text: '01/13 早上用 CatchTable 線上抽「金豬食堂」號碼牌' },
-      { id: 'c7', text: '隨身攜帶護照正本（購物滿 15,000 韓元現場退稅用）' },
-      { id: 'c8', text: '準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
-      { id: 'c9', text: '準備 T-money 交通卡並儲值（搭深夜巴士與地鐵）' },
-      { id: 'c10', text: '演唱會應援手燈、備用電池、轉接頭與行動電源' }
+      { id: 'c7', text: '準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
+      { id: 'c8', text: '準備 T-money 交通卡並儲值滿 17,000 韓元以上（搭深夜巴士 N6002 與地鐵）' },
+      { id: 'c9', text: '開通海外信用卡回饋與國外提款密碼（明洞換錢、購物退稅用）' }
     ];
 
     function loadCheckedState() {
@@ -1645,12 +1774,12 @@
       resetBtn.addEventListener('click', () => {
         saveCheckedState({});
         renderChecklist();
-        showToast('已重設所有待辦清單項目');
+        showToast('已重設代辦清單項目');
       });
     }
 
     // ============================================================
-    // 5. 一鍵複製文字與 Toast 提示
+    // 6. 一鍵複製文字與 Toast 提示
     // ============================================================
     let toastTimer = null;
     function showToast(msg) {
@@ -1685,9 +1814,10 @@
     }
 
     // ============================================================
-    // 6. 頁面載入後初始化所有互動功能
+    // 7. 頁面載入後初始化所有互動功能
     // ============================================================
     document.addEventListener('DOMContentLoaded', () => {
+      renderPackingList();
       renderNightBus('N6002');
       renderItinerary(0);
       renderChecklist();
