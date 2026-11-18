@@ -349,45 +349,50 @@
         <p>• <strong class="text-espresso">01/13 (20:30) 後 ～ 01/15</strong>：<strong>2 人</strong>（令・保）</p>
       </div>
 
-      <!-- 卡片 1：忙（1/9 去、1/14 回） -->
+      <!-- 卡片 1：忙（1/9 去、1/14 回，來回皆長榮） -->
       <article class="cafe-card p-5 space-y-3.5">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <span class="w-7 h-7 rounded-full bg-evaGreen/20 border border-evaGreen/40 flex items-center justify-center text-xs font-bold text-espresso">忙</span>
-            <h3 class="font-bold text-base text-espresso">忙（1人｜1/9 早班去・1/14 回）</h3>
+            <h3 class="font-bold text-base text-espresso">忙（1人｜1/9 早班去・1/14 晚班回）</h3>
           </div>
-          <span class="px-2.5 py-0.5 rounded-full bg-evaGreen/15 border border-evaGreen/35 text-xs font-medium text-espresso">長榮 BR170 ＋ 虎航</span>
+          <span class="px-2.5 py-0.5 rounded-full bg-evaGreen/15 border border-evaGreen/35 text-xs font-medium text-espresso">長榮航空 EVA Air（來回）</span>
         </div>
 
-        <!-- 去程 -->
-        <div class="bg-cream/80 border border-latte rounded-xl p-3">
-          <div class="flex items-center justify-between text-[11px] text-mocha mb-2">
-            <span class="font-bold text-espresso">🛫 去程｜2027/01/09 (六)</span>
-            <span>長榮航空 BR170（2h 25m）</span>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+          <!-- 去程 -->
+          <div class="bg-cream/80 border border-latte rounded-xl p-3">
+            <div class="text-[11px] font-bold text-espresso mb-1.5">🛫 去程｜2027/01/09 (六)</div>
+            <div class="flex items-center justify-between text-center">
+              <div>
+                <div class="text-[10px] text-mocha">桃園 T2</div>
+                <div class="font-editorial text-xl font-bold text-espresso">07:05</div>
+              </div>
+              <span class="text-xs text-mocha">✈ BR170</span>
+              <div>
+                <div class="text-[10px] text-mocha">仁川 T1</div>
+                <div class="font-editorial text-xl font-bold text-espresso">10:30</div>
+              </div>
+            </div>
+            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">抵韓後赴青丘站民宿，白天與先到的「豆、袖」會合。</p>
           </div>
-          <div class="flex items-center justify-between text-center gap-2">
-            <div class="flex-1">
-              <div class="text-[11px] text-mocha">桃園 T2</div>
-              <div class="font-editorial text-2xl font-bold text-espresso">07:05</div>
-            </div>
-            <div class="flex flex-col items-center px-2 text-mocha">
-              <span class="text-[10px]">直飛</span>
-              <span class="text-xs tracking-widest">─── ✈ ───</span>
-            </div>
-            <div class="flex-1">
-              <div class="text-[11px] text-mocha">仁川 T1</div>
-              <div class="font-editorial text-2xl font-bold text-espresso">10:30</div>
-            </div>
-          </div>
-          <p class="text-xs text-mocha mt-2 pt-2 border-t border-latte/70">
-            抵韓後搭 AREX 普通車至「孔德站」轉 5 號線直達「青丘站」民宿，白天與先到的「豆、袖」會合。
-          </p>
-        </div>
 
-        <!-- 回程 -->
-        <div class="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm pt-1">
-          <span class="text-mocha"><strong class="text-espresso">🛬 回程：</strong>2027/01/14 (四) 00:30 仁川起飛（02:15 抵桃機）</span>
-          <span class="px-2 py-0.5 rounded-md bg-oatmeal text-xs font-medium text-espresso">01/13 20:30 赴機場（與豆同班機）</span>
+          <!-- 回程 -->
+          <div class="bg-cream/80 border border-latte rounded-xl p-3">
+            <div class="text-[11px] font-bold text-espresso mb-1.5">🛬 回程｜2027/01/14 (四)</div>
+            <div class="flex items-center justify-between text-center">
+              <div>
+                <div class="text-[10px] text-mocha">仁川 T1</div>
+                <div class="font-editorial text-xl font-bold text-espresso">19:45</div>
+              </div>
+              <span class="text-xs text-mocha">✈ 長榮</span>
+              <div>
+                <div class="text-[10px] text-mocha">桃園 T2</div>
+                <div class="font-editorial text-xl font-bold text-espresso">21:40</div>
+              </div>
+            </div>
+            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">01/14 約 16:00 從青丘站出發赴機場（與豆同班機）。</p>
+          </div>
         </div>
       </article>
 
@@ -425,9 +430,22 @@
           </p>
         </div>
 
-        <div class="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm pt-1">
-          <span class="text-mocha"><strong class="text-espresso">🛬 回程：</strong>2027/01/14 (四) 00:30 仁川起飛（02:15 抵桃機）</span>
-          <span class="px-2 py-0.5 rounded-md bg-oatmeal text-xs font-medium text-espresso">與「忙」同天同班機返台</span>
+        <!-- 回程 -->
+          <div class="bg-cream/80 border border-latte rounded-xl p-3">
+            <div class="text-[11px] font-bold text-espresso mb-1.5">🛬 回程｜2027/01/14 (四)</div>
+            <div class="flex items-center justify-between text-center">
+              <div>
+                <div class="text-[10px] text-mocha">仁川 T1</div>
+                <div class="font-editorial text-xl font-bold text-espresso">19:45</div>
+              </div>
+              <span class="text-xs text-mocha">✈ 長榮</span>
+              <div>
+                <div class="text-[10px] text-mocha">桃園 T2</div>
+                <div class="font-editorial text-xl font-bold text-espresso">21:40</div>
+              </div>
+            </div>
+            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">與「忙」同天同班機返台，01/14 約 16:00 赴機場。</p>
+          </div>
         </div>
       </article>
 
