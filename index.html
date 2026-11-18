@@ -1236,8 +1236,8 @@
       `;
     }
 
-        // ============================================================
-    // 3. 每日行程資料（已調整 4 人同逛首爾站樂天超市、移除陳玉華一隻雞）
+    // ============================================================
+    // 3. 每日行程資料（已更新 Day 3 縫隙拉麵聖水店、Day 4 最新安排）
     // ============================================================
     const itineraryData = [
       {
@@ -1351,7 +1351,7 @@
         fullTitle: 'Day 3｜01/11 (週一)',
         badge: '5 人 → 送別袖返台',
         badgeStyle: 'bg-destiCoral/15 text-espresso border-destiCoral/30',
-        summary: '早衝東海哈魯咖啡（讓今天返台的袖也喝到！）＋ 聖水商圈 ＋ 建大鼠兔咖啡，晚間送別「袖」赴機場返台。',
+        summary: '早衝東海哈魯咖啡 ＋ 午餐「縫隙拉麵 聖水店」＋ 聖水香氛潮牌街 ＋ 建大鼠兔咖啡，晚間送別「袖」赴機場返台。',
         events: [
           {
             time: '09:15',
@@ -1365,17 +1365,24 @@
             title: '第一波衝刺：李東海「HARU COFFEE HOUSE（하루커피하우스）」',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: true,
-            desc: '一早開門前先來排隊／抽號碼牌（讓今天就要回台灣的 袖 也能喝到！），喝完咖啡後在聖水洞自由吃午餐、逛香氛與潮牌街。'
+            desc: '一早開門前先排隊／抽號碼牌（讓今天返台的 袖 也能喝到！）。'
+          },
+          {
+            time: '12:00',
+            title: '午餐必吃：「縫隙拉麵 聖水店（틈새라면 성수점）」＋ 逛聖水商圈',
+            transports: [{ label: '🚶 聖水洞步行', style: 'bg-oatmeal border-latte' }],
+            mustVisit: true,
+            desc: '地址：서울특별시 성동구 성수일로 11-1（就在聖水洞商圈內，步行即可抵達），5 人一起吃招牌辣拉麵（빨계떡）＋小紫菜包飯，吃完接著逛聖水香氛與潮牌街！'
           },
           {
             time: '16:30',
             title: '前往建大商圈：逛街晚餐 ＋ 藝聲「Mouse Rabbit Coffee（鼠兔咖啡廳）」',
             transports: [
-              { label: '🚇 地鐵2號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
+              { label: '🚇 地鐵2號線(2站5分)', style: 'bg-destiBlue/15 border-destiBlue/30' },
               { label: '🚶 步行', style: 'bg-oatmeal border-latte' }
             ],
             mustVisit: true,
-            desc: '搭 2 號線僅 2 站（車程 5 分鐘）至「建大入口站」，逛建大商圈、在美食街吃晚餐，接著直接前往藝聲的 「Mouse Rabbit Coffee（鼠兔咖啡廳，營業至 23:00）」 喝飲料打卡。'
+            desc: '搭 2 號線僅 2 站（車程 5 分鐘）至「建大入口站」，逛建大商圈、在美食街吃晚餐，接著前往藝聲的 「Mouse Rabbit Coffee（鼠兔咖啡廳，營業至 23:00）」 喝飲料打卡。'
           },
           {
             time: '晚間時段',
@@ -1393,16 +1400,16 @@
         dayLabel: 'Day 4',
         dateLabel: '1/12 (二)',
         fullTitle: 'Day 4｜01/12 (週二)',
-        badge: '4 人分組 ➔ 奉恩寺 ➔ 明洞 ➔ 樂天超市 ➔ 東大門夜購',
+        badge: '4 人分組 ➔ 奉恩寺 ➔ 明洞 ➔ 東大門夜購',
         badgeStyle: 'bg-destiPurple/15 text-espresso border-destiPurple/30',
-        summary: '上午分組，11:30 奉恩寺 4 人會合 ➔ COEX 星空圖書館 ➔ 明洞縫隙拉麵・chaakan・12層大創 ➔ 4 人一起去首爾站樂天超市掃貨 ➔ 東大門夜購！',
+        summary: '上午分組（忙令豆二刷哈魯 ／ 保去 SM 曠野或景福宮），11:30 奉恩寺會合 ➔ COEX 星空圖書館 ➔ 明洞 chaakan・12層大創 ➔ 東大門夜購＋陳玉華一隻雞！',
         events: [
           {
             time: '09:30 - 11:30',
             title: '🌅 上午分組行動｜🅰️ 忙、令、豆（二刷哈魯） ／ 🅱️ 保（SM 曠野或景福宮）',
             transports: [{ label: '🚇 地鐵分組移動', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: true,
-            desc: '【🅰️ 忙、令、豆（3人）】從「青丘站」轉 2 號線至「聖水站」（約 15 分鐘）二刷「HARU COFFEE HOUSE（哈魯咖啡廳）」排隊喝東海咖啡、補逛聖水洞（若前一天已喝夠，也可睡飽 10:00 再直接出發去奉恩寺）；結束後搭 2 號線直達「三成站」（僅 4 站／約 10 分鐘）會合。\n【🅱️ 保（1人）】二選一：路線 ①（SM 曠野，10:30 開門）：青丘搭 5 號線至「往十里站」轉 水仁·盆唐線 1 站至「首爾林站」4/5 號出口逛周邊，結束後搭 水仁·盆唐線（3 站／約 8 分鐘）至「宣靖陵站」轉 9 號線 2 站至「奉恩寺站」會合。路線 ②（景福宮，09:00 開門）：青丘搭 5 號線 至「光化門站」步行即達景福宮，結束後從「景福宮站」搭 3 號線 直達「高速巴士客運站」轉 9 號線至「奉恩寺站」會合（車程約 35 分鐘）。'
+            desc: '【🅰️ 忙、令、豆（3人）】從青丘站轉 2 號線至聖水站（約 15 分鐘），一早排隊喝東海咖啡、補逛聖水洞；結束後直接搭 2 號線直達「三成站」（僅 4 站／約 10 分鐘）赴奉恩寺會合。\n【🅱️ 保（1人）】二選一：去 SM 曠野（首爾林站，10:30 開門），結束後搭水仁·盆唐線轉 9 號線至「奉恩寺站」會合（車程約 12 分鐘）；或去 景福宮（09:00 開門），結束後搭 3 號線轉 9 號線至「奉恩寺站」會合（車程約 35 分鐘）。'
           },
           {
             time: '11:30',
@@ -1413,37 +1420,30 @@
           },
           {
             time: '12:30',
-            title: 'COEX 星空圖書館拍照',
+            title: 'COEX 星空圖書館拍照 ＋ 吃午餐',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: false,
-            desc: '過馬路進 COEX Mall 吹暖氣拍星空圖書館。'
+            desc: '過馬路進 COEX Mall 吹暖氣拍星空圖書館、吃午餐。'
           },
           {
             time: '14:30',
-            title: '明洞美食＆掃貨一條街（縫隙拉麵・chaakan 女鞋・12層大創）',
+            title: '明洞掃貨一條街（chaakan 女鞋・12層大創・Olive Young）',
             transports: [
               { label: '🚇 地鐵', style: 'bg-destiBlue/15 border-destiBlue/30' },
               { label: '🚶 步行掃貨', style: 'bg-oatmeal border-latte' }
             ],
             mustVisit: true,
-            desc: '🍜 必吃「縫隙拉麵（틈새라면 明洞本店）」：就在明洞中心商圈，嗜辣必點招牌年糕起司拉麵。\n👠 必買「chaakan 女鞋（明洞8娜街25號）」：試穿平價美鞋（滿 15,000 韓元帶護照現場退稅）。\n🛍️ 必逛「明洞 12 層樓大創（Daiso）旗艦店」＋ Olive Young ＋ 換錢：12 層樓整棟超好買，美妝工具、收納與生活小物一次補齊。'
+            desc: '👠 必買「chaakan 女鞋（明洞8娜街25號）」：試穿平價美鞋（滿 15,000 韓元帶護照現場退稅）。\n🛍️ 必逛「明洞 12 層樓大創（Daiso）旗艦店」＋ Olive Young ＋ 換錢：少了排拉麵的時間，整棟大創可以慢慢逛個夠！'
           },
           {
-            time: '18:00',
-            title: '🛒 4 人一起去「首爾站樂天超市（ZETTAPLEX）」伴手禮大採買！',
-            transports: [{ label: '🚇 地鐵4號線(2站5分)', style: 'bg-destiBlue/15 border-destiBlue/30' }],
-            mustVisit: true,
-            desc: '明洞站搭 4 號線僅 2 站（5 分鐘）直達「首爾站」！趁 4 人（忙、令、豆、保）都還在，一起把海苔、泡麵、零食伴手禮買齊（滿 15,000 韓元帶護照現場退稅，現場也提供免費紙箱打包）。'
-          },
-          {
-            time: '20:30',
-            title: '東大門夜購掃貨 ➔ 散步走回青丘站民宿',
+            time: '20:00',
+            title: '東大門夜購掃貨 ＋ 陳玉華一隻雞 ➔ 散步走回青丘站民宿',
             transports: [
-              { label: '🚇 地鐵4號線(4站9分)', style: 'bg-destiBlue/15 border-destiBlue/30' },
+              { label: '🚇 地鐵4號線(2站5分)', style: 'bg-destiBlue/15 border-destiBlue/30' },
               { label: '🚶 散步8-12分', style: 'bg-oatmeal border-latte' }
             ],
             mustVisit: true,
-            desc: '從首爾站搭 4 號線順向坐 4 站（約 9 分鐘）至「東大門歷史文化公園站」，開逛 nyu·nyu、MIMILINE 飾品與批發服飾（4 人超好湊同款 2 件批發價），逛完直接散步走回青丘站民宿（步行約 8–12 分鐘）。'
+            desc: '搭 4 號線至東大門（僅 2 站／車程 5 分鐘），開逛 nyu·nyu、MIMILINE 飾品與批發服飾，宵夜合吃 陳玉華一隻雞，逛完直接散步走回青丘站民宿（步行約 8–12 分鐘）。'
           }
         ]
       },
@@ -1501,7 +1501,7 @@
         fullTitle: 'Day 6｜01/14 (週四) → 01/15 (週五)',
         badge: '2 人：令、保 悠閒返台',
         badgeStyle: 'bg-destiBlue/15 text-espresso border-destiBlue/30',
-        summary: '令、保 2 人上午去金浦金厲旭「Forest for Rest 森林咖啡廳」，14:30 回程市區悠閒補貨（益善洞／大創／GS25），20:15 赴仁川機場搭 01/15 00:30 虎航返台！',
+        summary: '令、保 2 人上午去金浦金厲旭「Forest for Rest 森林咖啡廳」，14:30 回程市區悠閒補貨（益善洞／大創／GS25／樂天超市），20:15 赴仁川機場搭 01/15 00:30 虎航返台！',
         events: [
           {
             time: '09:45',
@@ -1554,6 +1554,7 @@
         ]
       }
     ];
+
 
     let activeDayIndex = 0;
 
