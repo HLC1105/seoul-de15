@@ -174,20 +174,23 @@
 
   <!-- 1. 頂端極簡雜誌導覽列 -->
   <header class="sticky top-0 z-50 bg-cream/90 backdrop-blur-md border-b border-latte">
-    <nav aria-label="頁面快速導覽" class="max-w-[640px] mx-auto px-3 py-2.5 flex items-center justify-between gap-1">
-      <a href="#hero" class="flex-1 py-1.5 rounded-full text-center text-xs sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+    <nav aria-label="頁面快速導覽" class="max-w-[640px] mx-auto px-2 py-2.5 flex items-center justify-between gap-0.5">
+      <a href="#hero" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         首頁
       </a>
-      <a href="#flights" class="flex-1 py-1.5 rounded-full text-center text-xs sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#flights" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         成員航班
       </a>
-      <a href="#itinerary" class="flex-1 py-1.5 rounded-full text-center text-xs sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#night-bus" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+        夜間巴士
+      </a>
+      <a href="#itinerary" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         每日行程
       </a>
-      <a href="#checklist" class="flex-1 py-1.5 rounded-full text-center text-xs sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#checklist" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         行前清單
       </a>
-      <a href="#stay" class="flex-1 py-1.5 rounded-full text-center text-xs sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
+      <a href="#stay" class="flex-1 py-1.5 rounded-full text-center text-[11px] sm:text-sm font-medium text-espresso/85 hover:text-espresso hover:bg-oatmeal/80 transition-colors">
         候補住宿
       </a>
     </nav>
@@ -196,11 +199,11 @@
   <!-- 主要內容容器 -->
   <main class="max-w-[640px] mx-auto px-4 pt-6 space-y-9">
 
-    <!-- 2. 首頁雜誌封面 ＋ 拍立得海報紀念卡 ＋ 出發倒數 -->
+    <!-- 2. 首頁雜誌封面 ＋ 拍立得海報紀念卡 ＋ 多組倒數計時器 -->
     <section id="hero" class="cafe-card p-6 sm:p-8 relative">
       <div class="flex items-center justify-between text-[11px] sm:text-xs tracking-[0.16em] uppercase text-mocha border-b border-latte pb-3 mb-5">
         <span class="font-editorial font-bold text-sm tracking-widest text-espresso">SEOUL TRAVEL ARCHIVE</span>
-        <span>2027.01.09 – 01.15</span>
+        <span>2027.01.08 – 01.15</span>
       </div>
 
       <div class="text-center space-y-2">
@@ -302,7 +305,7 @@
         </div>
       </div>
 
-                  <!-- 多組出發與全員集合倒數計時器 -->
+      <!-- 多組出發與全員集合倒數計時器 -->
       <div class="bg-oatmeal/75 border border-latte rounded-2xl p-4 space-y-3">
         <div class="text-center text-xs tracking-wider text-mocha font-medium">
           ⏳ 2027 首爾追星出發＆集合倒數（即時同步）
@@ -365,19 +368,21 @@
           </div>
         </div>
       </div>
+    </section>
 
     <!-- 3. 成員航班 -->
     <section id="flights" class="space-y-4">
       <div class="flex items-baseline justify-between px-1">
         <h2 class="font-serif text-xl sm:text-2xl font-bold text-espresso">成員航班</h2>
+        <span class="font-editorial italic text-sm text-mocha">5 Members · Flight Passes</span>
       </div>
 
-      <!-- 卡片 1：忙（1/9 去、1/14 回，來回皆長榮） -->
+      <!-- 卡片 1：忙（1/9 去、1/13 回，來回皆長榮） -->
       <article class="cafe-card p-5 space-y-3.5">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <span class="w-7 h-7 rounded-full bg-evaGreen/20 border border-evaGreen/40 flex items-center justify-center text-xs font-bold text-espresso">忙</span>
-            <h3 class="font-bold text-base text-espresso">忙（1人｜1/9 早班去・1/14 晚班回）</h3>
+            <h3 class="font-bold text-base text-espresso">忙（1人｜1/9 早班去・1/13 晚班回）</h3>
           </div>
           <span class="px-2.5 py-0.5 rounded-full bg-evaGreen/15 border border-evaGreen/35 text-xs font-medium text-espresso">長榮航空 EVA Air（來回）</span>
         </div>
@@ -402,7 +407,7 @@
 
           <!-- 回程 -->
           <div class="bg-cream/80 border border-latte rounded-xl p-3">
-            <div class="text-[11px] font-bold text-espresso mb-1.5">🛬 回程｜2027/01/14 (四)</div>
+            <div class="text-[11px] font-bold text-espresso mb-1.5">🛬 回程｜2027/01/13 (三)</div>
             <div class="flex items-center justify-between text-center">
               <div>
                 <div class="text-[10px] text-mocha">仁川 T1</div>
@@ -414,17 +419,17 @@
                 <div class="font-editorial text-xl font-bold text-espresso">21:40</div>
               </div>
             </div>
-            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">01/14 約 16:00 從民宿出發赴機場（與豆同班機）。</p>
+            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">01/13 約 16:00 從民宿出發赴機場（與豆同班機）。</p>
           </div>
         </div>
       </article>
 
-      <!-- 卡片 2：豆（1/9前同時間去、1/14 與忙同班機長榮回） -->
+      <!-- 卡片 2：豆（1/8 去、1/13 與忙同班機長榮回） -->
       <article class="cafe-card p-5 space-y-3.5">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <span class="w-7 h-7 rounded-full bg-destiBlue/20 border border-destiBlue/40 flex items-center justify-center text-xs font-bold text-espresso">豆</span>
-            <h3 class="font-bold text-base text-espresso">豆（1人｜1/9 前先抵韓・1/14 晚班回）</h3>
+            <h3 class="font-bold text-base text-espresso">豆（1人｜1/8 先抵韓・1/13 晚班回）</h3>
           </div>
           <span class="px-2.5 py-0.5 rounded-full bg-evaGreen/15 border border-evaGreen/35 text-xs font-medium text-espresso">長榮航空 EVA Air（來回）</span>
         </div>
@@ -432,7 +437,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
           <!-- 去程 -->
           <div class="bg-cream/80 border border-latte rounded-xl p-3">
-            <div class="text-[11px] font-bold text-espresso mb-1.5">🛫 去程｜2027/01/09 前</div>
+            <div class="text-[11px] font-bold text-espresso mb-1.5">🛫 去程｜2027/01/08 (五)</div>
             <div class="flex items-center justify-between text-center">
               <div>
                 <div class="text-[10px] text-mocha">桃園 T2</div>
@@ -449,7 +454,7 @@
 
           <!-- 回程 -->
           <div class="bg-cream/80 border border-latte rounded-xl p-3">
-            <div class="text-[11px] font-bold text-espresso mb-1.5">🛬 回程｜2027/01/14 (四)</div>
+            <div class="text-[11px] font-bold text-espresso mb-1.5">🛬 回程｜2027/01/13 (三)</div>
             <div class="flex items-center justify-between text-center">
               <div>
                 <div class="text-[10px] text-mocha">仁川 T1</div>
@@ -461,24 +466,24 @@
                 <div class="font-editorial text-xl font-bold text-espresso">21:40</div>
               </div>
             </div>
-            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">與「忙」同天同班機返台，01/14 約 16:00 赴機場。</p>
+            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">與「忙」同天同班機返台，01/13 約 16:00 赴機場。</p>
           </div>
         </div>
       </article>
 
-      <!-- 卡片 3：袖（去程跟豆一樣、回程 1/11 機票待購） -->
+      <!-- 卡片 3：袖（1/8 去、1/11 提前回，機票待購） -->
       <article class="cafe-card p-5 space-y-3.5">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <div class="flex items-center gap-2">
             <span class="w-7 h-7 rounded-full bg-destiPurple/20 border border-destiPurple/40 flex items-center justify-center text-xs font-bold text-espresso">袖</span>
-            <h3 class="font-bold text-base text-espresso">袖（1人｜1/9 前先抵韓・1/11 提前回）</h3>
+            <h3 class="font-bold text-base text-espresso">袖（1人｜1/8 先抵韓・1/11 提前回）</h3>
           </div>
           <span class="px-2.5 py-0.5 rounded-full bg-destiCoral/20 border border-destiCoral/45 text-xs font-bold text-espresso">回程機票待購</span>
         </div>
 
         <div class="bg-cream/80 border border-latte rounded-xl p-3 space-y-1.5">
           <div class="flex items-center justify-between text-[11px] text-mocha">
-            <span class="font-bold text-espresso">🛫 去程｜與「豆」同天同班機</span>
+            <span class="font-bold text-espresso">🛫 去程｜2027/01/08 (五)（與「豆」同班機）</span>
             <span>長榮航空 BR170</span>
           </div>
           <div class="flex items-center justify-between text-center gap-2">
@@ -523,13 +528,13 @@
                 <div class="text-[10px] text-mocha">桃園 TPE</div>
                 <div class="font-editorial text-xl font-bold text-espresso">20:00</div>
               </div>
-              <span class="text-xs text-mocha">✈ 虎航IT 602</span>
+              <span class="text-xs text-mocha">✈ 虎航 IT602</span>
               <div>
                 <div class="text-[10px] text-mocha">仁川 ICN</div>
                 <div class="font-editorial text-xl font-bold text-espresso">23:30</div>
               </div>
             </div>
-            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">深夜進市區至民宿，凌晨 01:30 全員 5 人會合。</p>
+            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">深夜進市區至民宿，01/10 02:00 全員 5 人大集合。</p>
           </div>
 
           <!-- 回程 -->
@@ -540,7 +545,7 @@
                 <div class="text-[10px] text-mocha">仁川 ICN</div>
                 <div class="font-editorial text-xl font-bold text-espresso">00:30</div>
               </div>
-              <span class="text-xs text-mocha">✈ 虎航IT 603</span>
+              <span class="text-xs text-mocha">✈ 虎航 IT603</span>
               <div>
                 <div class="text-[10px] text-mocha">桃園 TPE</div>
                 <div class="font-editorial text-xl font-bold text-espresso">02:15</div>
@@ -552,7 +557,7 @@
       </article>
     </section>
 
-        <!-- 3.5 仁川機場夜間巴士指南（互動點選路線顯示時刻表＋T1搭乘區地圖） -->
+    <!-- 3.5 仁川機場夜間巴士指南（互動點選路線顯示時刻表＋T1搭乘區地圖） -->
     <section id="night-bus" class="space-y-4">
       <div class="flex flex-wrap items-baseline justify-between gap-2 px-1">
         <div>
@@ -589,7 +594,7 @@
             <span class="text-[11px] text-mocha">出境大廳 1樓 外側首爾巴士區</span>
           </div>
 
-  <!-- 站牌速查膠囊（優化排版：文字分層不擠壓、路線標籤不換行） -->
+          <!-- 站牌速查膠囊 -->
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
             <div class="bg-cream border border-latte rounded-xl px-3.5 py-2.5 flex items-center justify-between gap-2">
               <div class="leading-snug">
@@ -624,11 +629,9 @@
               💡 提示：出關後從 1 樓 <strong>3～4 號出口</strong>（往 3B 站牌）或 <strong>6 號出口</strong>（往 6A 站牌）走出航廈即可看到「首爾巴士」指示牌（請確認 <code class="bg-white px-1 rounded border border-latte">airportmap.png</code> 已上傳至 GitHub 同資料夾）。
             </div>
           </div>
-
         </div>
       </article>
     </section>
-
 
     <!-- 4. 每日行程時間軸 -->
     <section id="itinerary" class="space-y-4">
@@ -883,7 +886,7 @@
 
       </div>
 
-            <!-- 常用景點韓文地址快速複製區 -->
+      <!-- 常用景點韓文地址快速複製區 -->
       <div class="bg-oatmeal/70 border border-latte rounded-2xl p-4 space-y-2">
         <div class="font-bold text-xs sm:text-sm text-espresso">
           📋 行程重點店家韓文地址一鍵複製
@@ -947,12 +950,11 @@
       </div>
     </section>
 
-
   </main>
 
   <footer class="max-w-[640px] mx-auto px-4 mt-10 text-center text-xs text-mocha space-y-1">
     <p class="font-editorial italic text-sm text-espresso">2027 SUPER JUNIOR - D&amp;E LIVE TOUR : DE-STIVAL : THE 15/15</p>
-    <p>忙 · 令 · 豆 · 袖 · 保｜2027/01/09 – 01/15 Seoul &amp; Incheon</p>
+    <p>忙 · 令 · 豆 · 袖 · 保｜2027/01/08 – 01/15 Seoul &amp; Incheon</p>
   </footer>
 
   <!-- 無阻塞 Toast 提示框 -->
@@ -963,7 +965,7 @@
     </div>
   </div>
 
-    <script>
+  <script>
     // ============================================================
     // 1. 仁川機場夜間巴士互動路線與時刻表（依官方圖一、圖二製作）
     // ============================================================
@@ -997,7 +999,7 @@
           { name: '清涼里', time: '約 90 分鐘' }
         ],
         schedules: ['00:00', '00:30', '01:00', '01:40', '04:00', '04:40'],
-        note: '令、保 23:30 落地領行李後，搭 00:15 或 01:05 班次最剛好！於「興仁之門 동대문(흥인지문)」下車轉計程車 3 分鐘直達青丘站民宿。'
+        note: '令、保 23:30 落地領行李後，搭 00:00 或 00:30 班次最剛好！於「興仁之門 동대문(흥인지문)」下車轉計程車 3 分鐘直達青丘站民宿。'
       },
       N6701: {
         code: 'N6701',
@@ -1120,7 +1122,7 @@
     }
 
     // ============================================================
-    // 2. 每日行程資料（同步最新成員航班與 01/14 16:00 送別忙、豆）
+    // 2. 每日行程資料（同步忙・豆 1/13 19:45 回程航班與人數變化）
     // ============================================================
     const itineraryData = [
       {
@@ -1129,14 +1131,14 @@
         fullTitle: 'Day 1｜01/09 (週六)',
         badge: '分批抵達 ➔ 5人會合',
         badgeStyle: 'bg-destiBlue/15 text-espresso border-destiBlue/30',
-        summary: '豆、袖已先在首爾接應；忙 07:05 搭長榮 BR170 於 10:30 抵韓；令、保晚間 23:30 抵達後進市區，凌晨 01:30 全員 5 人會合。',
+        summary: '豆、袖 1/8 已先在首爾接應；忙 1/9 07:05 搭長榮 BR170 於 10:30 抵韓；令、保晚間 23:30 抵達後進市區，01/10 02:00 全員 5 人大集合。',
         events: [
           {
-            time: '01/09 以前',
+            time: '01/08 (五)',
             title: '【豆、袖】搭長榮 BR170（07:05–10:30）提前抵韓，先行入住民宿',
-            transports: [{ label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
+            transports: [{ label: '✈️ 長榮 BR170', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: false,
-            desc: '豆、袖先至民宿確認門鎖密碼、熱水與暖氣，等待其他三位旅伴抵達。'
+            desc: '豆、袖 1/8 先至民宿確認門鎖密碼、熱水與暖氣，等待其他三位旅伴抵達。'
           },
           {
             time: '07:05 - 10:30',
@@ -1151,20 +1153,20 @@
           },
           {
             time: '20:00 - 23:30',
-            title: '【令、保】桃園機場起飛 (台灣虎航) ➔ 抵達仁川機場',
+            title: '【令、保】桃園機場起飛 (台灣虎航 IT602) ➔ 抵達仁川機場',
             transports: [{ label: '✈️ 台灣虎航', style: 'bg-destiPink/15 border-destiPink/30' }],
             mustVisit: false,
             desc: '令、保 20:00 從 TPE 起飛，預計 23:30 抵達仁川國際機場 T1，辦理入境手續與領取行李。'
           },
           {
-            time: '00:15 - 01:30',
-            title: '【令、保】深夜進市區抵民宿 ➔ 忙・令・豆・袖・保 5人全員會合',
+            time: '00:00 - 02:00',
+            title: '【令、保】深夜進市區抵民宿 ➔ 忙・令・豆・袖・保 5人全員大集合！',
             transports: [
               { label: '🚌 深夜巴士', style: 'bg-destiPink/15 border-destiPink/30' },
               { label: '🚕 計程車', style: 'bg-destiPurple/15 border-destiPurple/30' }
             ],
             mustVisit: false,
-            desc: '若住候補 ① 青丘站：搭深夜巴士 N6002 至東大門(興仁之門)轉計程車 3 分鐘即達；若住候補 ② 禾谷洞：可搭 N6000 至松亭/鹽倉站轉計程車或機場計程車直達，凌晨與忙、豆、袖會合！'
+            desc: '若住候補 ① 青丘站：搭深夜巴士 N6002 至東大門(興仁之門)轉計程車 3 分鐘即達；若住候補 ② 禾谷洞：可搭 N6000 至松亭/鹽倉站轉計程車或機場計程車直達，於 01/10 02:00 與忙、豆、袖全員會合！'
           }
         ]
       },
@@ -1338,13 +1340,13 @@
         dayLabel: 'Day 5',
         dateLabel: '1/13 (三)',
         fullTitle: 'Day 5｜01/13 (週三)',
-        badge: '4人 金浦＋弘大美食日',
+        badge: '16:00 送別忙・豆 ➔ 剩2人',
         badgeStyle: 'bg-destiPink/15 text-espresso border-destiPink/30',
-        summary: '首爾西側一條線：5 號線直達金浦厲旭森林咖啡 ➔ 回程順路弘大訂製刷具 ➔ 金豬食堂 4 人大餐！',
+        summary: '早上 4 人去金浦厲旭森林咖啡；約 16:00 送別「忙、豆」赴仁川機場（搭 19:45 長榮 BR159 返台），晚上「令、保」2 人去弘大訂製刷具＆吃金豬食堂！',
         events: [
           {
             time: '09:45',
-            title: '出發前往金浦（5 號線一班車直達金浦機場站）',
+            title: '4 人出發前往金浦（5 號線一班車直達金浦機場站）',
             transports: [
               { label: '🚇 地鐵5號線直達', style: 'bg-destiBlue/15 border-destiBlue/30' },
               { label: '🚕 計程車', style: 'bg-destiPurple/15 border-destiPurple/30' }
@@ -1354,31 +1356,37 @@
           },
           {
             time: '11:00',
-            title: '金厲旭 Forest for Rest 森林咖啡廳',
+            title: '金厲旭 Forest for Rest 森林咖啡廳（4人）',
             transports: [],
             mustVisit: true,
-            desc: '避開週一二公休！地址：경기도 김포시 김포한강2로 41。在店內享用早午餐、喝咖啡，並與招牌長頸鹿造景拍照打卡。'
+            desc: '避開週一二公休！地址：경기도 김포시 김포한강2로 41。4 人在店內享用早午餐、喝咖啡，並與招牌長頸鹿造景拍照打卡。'
           },
           {
-            time: '14:15',
-            title: '回程順路停靠弘大入口站（車程僅 14 分鐘）',
-            transports: [{ label: '🚄 AREX機場快線', style: 'bg-destiCoral/15 border-destiCoral/30' }],
+            time: '16:00',
+            title: '【忙、豆】回民宿拿行李赴仁川機場 T1（搭乘 19:45 長榮 BR159 返台）',
+            transports: [
+              { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
+              { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' }
+            ],
             mustVisit: false,
-            desc: '從金浦機場站搭 AREX 普通車往首爾方向坐 2 站，14 分鐘直達「弘大入口站」。'
+            desc: '忙、豆 16:00 出發前往仁川機場 T1，搭乘 19:45 長榮 BR159 班機（預計 21:40 抵達桃園 T2）；【令、保】2 人繼續留在首爾行程！'
           },
           {
-            time: '15:00',
-            title: 'Revoir Custom Brush 訂製刷具',
-            transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
+            time: '15:30 - 17:30',
+            title: '【令、保】順路前往弘大 Revoir Custom Brush 訂製刷具',
+            transports: [
+              { label: '🚄 AREX機場快線', style: 'bg-destiCoral/15 border-destiCoral/30' },
+              { label: '🚶 步行', style: 'bg-oatmeal border-latte' }
+            ],
             mustVisit: true,
             desc: '地址：首爾特別市麻浦區臥牛山路91號。客製專屬刷具，記得提前上官方 IG 確認預約規則與營業時間。'
           },
           {
-            time: '18:00',
-            title: '「金豬食堂」4人烤肉大餐',
+            time: '18:30',
+            title: '【令、保】「金豬食堂」2人烤肉晚餐',
             transports: [{ label: '🚇 地鐵2號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: false,
-            desc: '搭 2 號線至新堂／藥水站，享用米其林烤肉名店金豬食堂（記得一早用 CatchTable 線上抽 4 人號碼牌）。晚上 4 人一起回民宿整理行李！'
+            desc: '搭 2 號線至新堂／藥水站，享用米其林烤肉名店金豬食堂（記得一早用 CatchTable 線上抽號碼牌）。'
           }
         ]
       },
@@ -1386,33 +1394,23 @@
         dayLabel: 'Day 6',
         dateLabel: '1/14~15',
         fullTitle: 'Day 6｜01/14 (週四) ~ 01/15 (週五)',
-        badge: '16:00送別忙豆 ➔ 令保返台',
+        badge: '令、保 2人悠閒收尾',
         badgeStyle: 'bg-destiBlue/15 text-espresso border-destiBlue/30',
-        summary: '11:00 退房寄放行李，4 人白天逛益善洞／樂天超市補貨；16:00 忙、豆先赴機場搭長榮；20:15 令、保赴機場搭虎航！',
+        summary: '令、保 2 人 11:00 退房寄放行李，白天逛益善洞韓屋村、首爾站樂天超市最後採買伴手禮裝箱，20:15 赴仁川機場搭虎航返台！',
         events: [
           {
             time: '11:00',
-            title: '4 人民宿退房並寄放行李',
+            title: '【令、保】民宿退房並寄放行李',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: false,
-            desc: '提前與房東確認退房後行李暫放民宿玄關，或寄放在地鐵站／首爾站大型投幣置物櫃。'
+            desc: '提前與房東確認退房後行李暫放民宿玄關至 20:00，或寄放在地鐵站／首爾站大型投幣置物櫃。'
           },
           {
             time: '12:00',
-            title: '自由補貨時光：益善洞韓屋村 ／ 首爾站樂天超市',
+            title: '【令、保】2人自由補貨：益善洞韓屋村 ／ 首爾站樂天超市',
             transports: [{ label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: false,
             desc: '搭 5 號線至「鍾路3街站」逛益善洞韓屋村喝下午茶、拍人生四格；或前往「首爾站樂天超市」把海苔、泡麵、零食伴手禮一次買齊裝箱。'
-          },
-          {
-            time: '16:00',
-            title: '【忙、豆】出發前往仁川機場 T1（搭乘 19:45 長榮班機返台）',
-            transports: [
-              { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
-              { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' }
-            ],
-            mustVisit: false,
-            desc: '忙、豆領取行李後搭 5 號線轉 AREX 普通車前往仁川機場 T1，19:45 起飛、預計 21:40 抵達桃園 T2。'
           },
           {
             time: '20:15',
@@ -1422,11 +1420,11 @@
               { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' }
             ],
             mustVisit: false,
-            desc: '令、保繼續在市區吃晚餐、最後逛街後，20:15 領取行李搭 5 號線轉 AREX 前往仁川機場 T1 辦理登機與退稅。'
+            desc: '領取行李後搭 5 號線轉 AREX 普通車前往仁川機場 T1，約 21:30 抵達辦理登機與機場退稅。'
           },
           {
             time: '00:30',
-            title: '01/15 (週五)【令、保】台灣虎航起飛返台',
+            title: '01/15 (週五)【令、保】台灣虎航 IT603 起飛返台',
             transports: [{ label: '✈️ 台灣虎航', style: 'bg-destiPink/15 border-destiPink/30' }],
             mustVisit: false,
             desc: '00:30 仁川起飛，預計台灣時間 02:15 抵達桃園機場，滿載回憶歸國。'
@@ -1506,7 +1504,7 @@
       `;
     }
 
-        // ============================================================
+    // ============================================================
     // 3. 多組出發與主要集合日倒數計時器
     // ============================================================
     function formatCompactDiff(diff) {
@@ -1589,19 +1587,18 @@
       }
     }
 
-
     // ============================================================
     // 4. 可打勾的待辦清單 (localStorage 持久化)
     // ============================================================
-    const STORAGE_KEY = 'dne_seoul_2027_5members_checklist_v3';
+    const STORAGE_KEY = 'dne_seoul_2027_5members_checklist_v4';
     const defaultChecklist = [
       { id: 'c0', text: '【袖】購買 2027/01/11 (一) 返台回程機票並確認時間' },
       { id: 'c1', text: '【全員】近出發日拍板決定候補 ①（青丘站）或候補 ②（禾谷洞）並退掉另一間' },
-      { id: 'c2', text: '【豆、袖】提前向房東確認門鎖密碼、暖氣與電梯出口' },
-      { id: 'c3', text: '私訊房東確認 01/10 凌晨 01:30 令、保入住與 01/14 退房暫放行李' },
+      { id: 'c2', text: '【豆、袖】01/08 提前抵達向房東確認門鎖密碼、暖氣與電梯出口' },
+      { id: 'c3', text: '私訊房東確認 01/10 凌晨 02:00 令、保入住與 01/14 退房暫放行李' },
       { id: 'c4', text: '預約弘大 Revoir Custom Brush 訂製刷具時段 (IG)' },
       { id: 'c5', text: '下載必備 App：Naver Map、Uber / Kakao T、CatchTable' },
-      { id: 'c6', text: '01/13 早上用 CatchTable 線上抽「金豬食堂」4 人號碼牌' },
+      { id: 'c6', text: '01/13 早上用 CatchTable 線上抽「金豬食堂」號碼牌' },
       { id: 'c7', text: '隨身攜帶護照正本（購物滿 15,000 韓元現場退稅用）' },
       { id: 'c8', text: '準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
       { id: 'c9', text: '準備 T-money 交通卡並儲值（搭深夜巴士與地鐵）' },
@@ -1721,6 +1718,5 @@
       setInterval(updateCountdown, 1000);
     });
   </script>
-
 </body>
 </html>
