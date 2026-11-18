@@ -677,11 +677,11 @@
       <div id="itinerary-content" role="tabpanel" class="cafe-card p-5 sm:p-6"></div>
     </section>
 
-    <!-- 5. 行前＆當地代辦清單 -->
+    <!-- 5. 當地代辦清單 -->
     <section id="checklist" class="cafe-card p-5 sm:p-6 space-y-4">
       <div class="flex items-start justify-between gap-2">
         <div>
-          <h2 class="font-serif text-xl sm:text-2xl font-bold text-espresso">行前＆當地代辦清單</h2>
+          <h2 class="font-serif text-xl sm:text-2xl font-bold text-espresso">當地代辦清單</h2>
           <p class="text-xs text-mocha mt-0.5">訂房確認、預約刷具、換錢與退稅任務提醒</p>
         </div>
         <button id="reset-checklist-btn" type="button" class="cafe-btn bg-cream px-3 py-1 text-xs text-mocha hover:text-espresso shrink-0">
@@ -989,7 +989,7 @@
         category: '💙 D&E 15週年演唱會＆追星必備工具',
         badgeStyle: 'bg-destiPink/20 border-destiPink/40',
         items: [
-          { id: 'p7', text: 'SUPER JUNIOR 官方應援手燈（出發前務必先測試藍牙與亮燈）' },
+          { id: 'p7', text: 'SUPER JUNIOR D&E官方應援手燈（出發前務必先測試藍牙與亮燈）' },
           { id: 'p8', text: '手燈備用 AAA 電池（建議帶 2 組全新電池，避免開演沒電）' },
           { id: 'p9', text: '大容量行動電源＋充電線（低溫手機掉電快，拍場外應援與導航必備）' },
           { id: 'p10', text: '韓國圓腳兩孔轉接頭（220V 雙圓孔，確認吹風機與充電器支援國際電壓）' },
@@ -1715,14 +1715,14 @@
     const STORAGE_KEY = 'dne_seoul_2027_5members_tasks_v2';
     const defaultChecklist = [
       { id: 'c0', text: '【袖】購買 2027/01/11 (一) 返台回程機票（建議選晚班機，白天可完整參與聖水與建大行程）' },
-      { id: 'c1', text: '【全員】近出發日拍板決定候補 ①（青丘站）或候補 ②（禾谷洞）並退掉另一間' },
-      { id: 'c2', text: '【豆、袖】01/08 提前抵達向房東確認門鎖密碼、暖氣與電梯出口' },
-      { id: 'c3', text: '私訊房東確認 01/10 凌晨 02:00 令、保入住與 01/14 退房暫放行李' },
-      { id: 'c4', text: '預約 01/13 弘大 Revoir Custom Brush 訂製刷具時段 (IG)' },
-      { id: 'c5', text: '下載必備 App：Naver Map、Uber / Kakao T、CatchTable' },
-      { id: 'c6', text: '準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
-      { id: 'c7', text: '準備 T-money 交通卡並儲值滿 17,000 韓元以上（搭深夜巴士 N6002 與地鐵）' },
-      { id: 'c8', text: '開通海外信用卡回饋與國外提款密碼（明洞換錢、購物退稅用）' }
+      { id: 'c1', text: '【全員】12/10以前決定住宿候補 ①（青丘站）或候補 ②（禾谷洞）並退掉另一間' },
+      { id: 'c2', text: '【豆、袖、忙】01/09 提前抵達向房東確認門鎖密碼、暖氣與電梯出口' },
+      { id: 'c3', text: '【豆】協助私訊房東確認 01/14 退房暫放行李' },
+      { id: 'c4', text: '【令】預約 01/13 弘大 Revoir Custom Brush 訂製刷具時段 (IG)' },
+      { id: 'c5', text: '【全員】下載必備 App：Naver Map、Uber / Kakao T、CatchTable' },
+      { id: 'c6', text: '【全員】準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
+      { id: 'c7', text: '【全員】準備 T-money 交通卡並儲值滿 17,000 韓元以上（搭深夜巴士 N6002 與地鐵）' },
+      { id: 'c8', text: '【全員】開通海外信用卡回饋與國外提款密碼（明洞換錢、購物退稅用）' }
     ];
 
     function loadCheckedState() {
