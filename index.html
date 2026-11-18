@@ -373,7 +373,7 @@
       </div>
     </section>
 
-    <!-- 2.5 行前準備清單（配合首爾一月嚴寒氣候 ＋ 演唱會追星裝備，位於倒數後面、航班前面） -->
+    <!-- 2.5 行前準備清單（配合首爾一月嚴寒氣候 ＋ 演唱會追星裝備） -->
     <section id="packing" class="cafe-card p-5 sm:p-6 space-y-4">
       <div class="flex items-start justify-between gap-2">
         <div>
@@ -682,7 +682,7 @@
       <div class="flex items-start justify-between gap-2">
         <div>
           <h2 class="font-serif text-xl sm:text-2xl font-bold text-espresso">行前＆當地代辦清單</h2>
-          <p class="text-xs text-mocha mt-0.5">訂房確認、搶號碼牌、換錢與退稅任務提醒</p>
+          <p class="text-xs text-mocha mt-0.5">訂房確認、預約刷具、換錢與退稅任務提醒</p>
         </div>
         <button id="reset-checklist-btn" type="button" class="cafe-btn bg-cream px-3 py-1 text-xs text-mocha hover:text-espresso shrink-0">
           重設
@@ -692,7 +692,7 @@
       <div class="space-y-1.5">
         <div class="flex justify-between text-xs text-mocha">
           <span>任務進度</span>
-          <span id="checklist-progress-text" class="font-medium text-espresso">0 / 10 項完成</span>
+          <span id="checklist-progress-text" class="font-medium text-espresso">0 / 9 項完成</span>
         </div>
         <div class="w-full h-2 bg-oatmeal rounded-full overflow-hidden">
           <div id="checklist-progress-bar" class="h-full bg-espresso rounded-full transition-all duration-300" style="width: 0%"></div>
@@ -783,7 +783,7 @@
           </div>
 
           <div class="bg-destiCoral/15 border border-destiCoral/35 rounded-xl px-3 py-2.5 text-xs text-espresso/90 leading-relaxed">
-            ⚠️ <strong>導航提醒：</strong>Airbnb 中文翻譯誤顯示「清潭站」，實際位於首爾中區<strong>「青丘站 (청구역)」</strong>出口 1 分鐘（401號房），步行 8–12 分鐘可達東大門商圈與金豬食堂。
+            ⚠️ <strong>導航提醒：</strong>Airbnb 中文翻譯誤顯示「清潭站」，實際位於首爾中區<strong>「青丘站 (청구역)」</strong>出口 1 分鐘（401號房），樓下即有 GS25 超商，步行 8–12 分鐘可達東大門商圈與金豬食堂。
           </div>
 
           <div class="space-y-2 text-xs">
@@ -908,14 +908,6 @@
             <div class="font-bold text-xs sm:text-sm text-espresso truncate">서울 성동구 아차산로11가길 3</div>
           </div>
           <button type="button" onclick="copyText('서울 성동구 아차산로11가길 3', '已複製東海 HARU 地址')" class="cafe-btn bg-cream px-3 py-1 text-xs font-medium text-espresso shrink-0 hover:bg-oatmeal">複製</button>
-        </div>
-
-        <div class="flex items-center justify-between gap-2 bg-white border border-latte rounded-xl px-3.5 py-2">
-          <div class="min-w-0">
-            <div class="text-[11px] text-mocha">Day 3 金鐘雲(藝聲) Cafe Armoire（衣櫥）</div>
-            <div class="font-bold text-xs sm:text-sm text-espresso truncate">서울 광진구 동일로22길 117-27</div>
-          </div>
-          <button type="button" onclick="copyText('서울 광진구 동일로22길 117-27', '已複製藝聲衣櫥地址')" class="cafe-btn bg-cream px-3 py-1 text-xs font-medium text-espresso shrink-0 hover:bg-oatmeal">複製</button>
         </div>
 
         <div class="flex items-center justify-between gap-2 bg-white border border-latte rounded-xl px-3.5 py-2">
@@ -1244,7 +1236,7 @@
       `;
     }
 
-        // ============================================================
+    // ============================================================
     // 3. 每日行程資料（最新完整定案版）
     // ============================================================
     const itineraryData = [
@@ -1509,7 +1501,7 @@
         fullTitle: 'Day 6｜01/14 (週四) → 01/15 (週五)',
         badge: '2 人：令、保 悠閒返台',
         badgeStyle: 'bg-destiBlue/15 text-espresso border-destiBlue/30',
-        summary: '令、保 2 人上午去金浦金厲旭「Forest for Rest 森林咖啡廳」，下午市區自由咖啡／補貨，20:15 赴仁川機場搭 01/15 00:30 虎航返台！',
+        summary: '令、保 2 人上午去金浦金厲旭「Forest for Rest 森林咖啡廳」，14:30 回程市區悠閒補貨（益善洞／大創／GS25／樂天超市），20:15 赴仁川機場搭 01/15 00:30 虎航返台！',
         events: [
           {
             time: '09:45',
@@ -1527,30 +1519,6 @@
             ],
             mustVisit: true,
             desc: '從「青丘站」搭 地鐵 5 號線（紫線） 一班車直達「金浦機場站」（約 50 分鐘），轉乘金浦黃金線（至場基站步行約 10–12 分鐘）或 2 人叫計程車，約 11:15 抵達金厲旭的「Forest for Rest 森林咖啡廳」（週四正常營業！地址：경기도 김포시 김포한강2로 41）。'
-          },
-          {
-            time: '14:30',
-            title: '【令、保】下午市區自由時光（益善洞韓屋村 ／ 最後補貨）',
-            transports: [
-              { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
-              { label: '🚄 AREX普通車', style: 'bg-destiCoral/15 border-destiCoral/30' }
-            ],
-            mustVisit: false,
-            desc: '回到市區輕鬆逛街喝下午茶（可搭 5 號線至鍾路3街逛益善洞韓屋村，或補買還沒買齊的藥妝零食）。'
-          },
-          {
-            time: '20:15',
-            title: '【令、保】領行李出發前往仁川機場（總車程約 50–65 分鐘）',
-            transports: [{ label: '🚄 AREX普通車', style: 'bg-destiCoral/15 border-destiCoral/30' }],
-            mustVisit: false,
-            desc: '領取行李搭 AREX 普通車 直達仁川機場 T1，約 21:30 抵達辦理登機與領取退稅。'
-          },
-          {
-            time: '00:30',
-            title: '01/15 (週五)【令、保】台灣虎航 IT603 起飛返台！',
-            transports: [{ label: '✈️ 台灣虎航', style: 'bg-destiPink/15 border-destiPink/30' }],
-            mustVisit: false,
-            desc: '00:30 仁川起飛，預計台灣時間 02:15 抵達桃園機場，滿載回憶歸國！'
           },
           {
             time: '14:30',
@@ -1578,7 +1546,7 @@
           },
           {
             time: '00:30',
-            title: '01/15 (週五)【令、保】虎航起飛返台！',
+            title: '01/15 (週五)【令、保】虎航 IT603 起飛返台！',
             transports: [{ label: '✈️ 台灣虎航', style: 'bg-destiPink/15 border-destiPink/30' }],
             mustVisit: false,
             desc: '00:30 仁川起飛，預計台灣時間 02:15 抵達桃園機場，滿載回憶歸國！'
@@ -1587,6 +1555,76 @@
       }
     ];
 
+    let activeDayIndex = 0;
+
+    function renderItinerary(index) {
+      activeDayIndex = index;
+      const tabsContainer = document.getElementById('day-tabs');
+      const contentContainer = document.getElementById('itinerary-content');
+      if (!tabsContainer || !contentContainer) return;
+
+      tabsContainer.innerHTML = itineraryData.map((item, idx) => {
+        const isActive = idx === activeDayIndex;
+        return `
+          <button
+            type="button"
+            role="tab"
+            aria-selected="${isActive}"
+            onclick="renderItinerary(${idx})"
+            class="day-tab ${isActive ? 'active' : ''} py-2 px-1.5 text-center cursor-pointer flex flex-col items-center justify-center"
+          >
+            <span class="font-editorial text-sm font-bold leading-tight">${item.dayLabel}</span>
+            <span class="text-[11px] opacity-80 mt-0.5">${item.dateLabel}</span>
+          </button>
+        `;
+      }).join('');
+
+      const day = itineraryData[activeDayIndex];
+      contentContainer.classList.remove('panel-fade');
+      void contentContainer.offsetWidth;
+      contentContainer.classList.add('panel-fade');
+
+      const eventsHtml = day.events.map((ev, idx) => {
+        const isLast = idx === day.events.length - 1;
+        const transportBadges = ev.transports.map(t =>
+          `<span class="px-2 py-0.5 rounded-full border text-[11px] text-espresso inline-flex items-center ${t.style}">${t.label}</span>`
+        ).join('');
+
+        const mustBadge = ev.mustVisit
+          ? `<span class="px-2.5 py-0.5 rounded-full bg-espresso text-cream text-[11px] font-medium inline-flex items-center gap-1">★ 必去</span>`
+          : '';
+
+        return `
+          <div class="relative pl-6 ${isLast ? '' : 'pb-6'}">
+            ${isLast ? '' : '<div class="absolute left-[5px] top-3 bottom-0 w-[1px] bg-latte"></div>'}
+            <div class="absolute left-0 top-1.5 w-[11px] h-[11px] rounded-full border-2 ${ev.mustVisit ? 'border-destiPink bg-destiPink' : 'border-espresso bg-cream'}"></div>
+
+            <div class="${ev.mustVisit ? 'bg-oatmeal/65 border border-latte rounded-2xl p-3.5' : ''}">
+              <div class="flex flex-wrap items-center gap-1.5 mb-1.5">
+                <span class="font-editorial text-sm font-bold text-espresso tracking-wide">${ev.time}</span>
+                ${mustBadge}
+                ${transportBadges}
+              </div>
+              <h3 class="text-sm sm:text-base font-bold leading-snug text-espresso">${ev.title}</h3>
+              <p class="text-xs sm:text-sm leading-relaxed text-mocha mt-1 whitespace-pre-line">${ev.desc}</p>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      contentContainer.innerHTML = `
+        <div class="border-b border-latte pb-4 mb-5">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <h3 class="font-serif text-lg sm:text-xl font-bold text-espresso">${day.fullTitle}</h3>
+            <span class="px-3 py-0.5 rounded-full border text-xs font-medium ${day.badgeStyle}">${day.badge}</span>
+          </div>
+          <p class="text-xs sm:text-sm mt-2 text-mocha leading-relaxed">${day.summary}</p>
+        </div>
+        <div>
+          ${eventsHtml}
+        </div>
+      `;
+    }
 
     // ============================================================
     // 4. 多組出發與主要集合日倒數計時器
@@ -1674,7 +1712,7 @@
     // ============================================================
     // 5. 行前＆當地代辦清單（任務事項）
     // ============================================================
-    const STORAGE_KEY = 'dne_seoul_2027_5members_tasks_v1';
+    const STORAGE_KEY = 'dne_seoul_2027_5members_tasks_v2';
     const defaultChecklist = [
       { id: 'c0', text: '【袖】購買 2027/01/11 (一) 返台回程機票（建議選晚班機，白天可完整參與聖水與建大行程）' },
       { id: 'c1', text: '【全員】近出發日拍板決定候補 ①（青丘站）或候補 ②（禾谷洞）並退掉另一間' },
@@ -1682,10 +1720,9 @@
       { id: 'c3', text: '私訊房東確認 01/10 凌晨 02:00 令、保入住與 01/14 退房暫放行李' },
       { id: 'c4', text: '預約 01/13 弘大 Revoir Custom Brush 訂製刷具時段 (IG)' },
       { id: 'c5', text: '下載必備 App：Naver Map、Uber / Kakao T、CatchTable' },
-      { id: 'c6', text: '01/13 早上用 CatchTable 線上抽「金豬食堂」號碼牌' },
-      { id: 'c7', text: '準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
-      { id: 'c8', text: '準備 T-money 交通卡並儲值滿 17,000 韓元以上（搭深夜巴士 N6002 與地鐵）' },
-      { id: 'c9', text: '開通海外信用卡回饋與國外提款密碼（明洞換錢、購物退稅用）' }
+      { id: 'c6', text: '準備韓元現金（奉恩寺買十二生肖手鍊、東大門攤位）' },
+      { id: 'c7', text: '準備 T-money 交通卡並儲值滿 17,000 韓元以上（搭深夜巴士 N6002 與地鐵）' },
+      { id: 'c8', text: '開通海外信用卡回饋與國外提款密碼（明洞換錢、購物退稅用）' }
     ];
 
     function loadCheckedState() {
