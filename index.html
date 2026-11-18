@@ -419,7 +419,7 @@
                 <div class="font-editorial text-xl font-bold text-espresso">21:40</div>
               </div>
             </div>
-            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">01/13 約 16:00 從民宿出發赴機場（與豆同班機）。</p>
+            <p class="text-[11px] text-mocha mt-1.5 pt-1.5 border-t border-latte/70">01/13 約 16:00 從弘大／民宿出發赴機場（與豆同班機）。</p>
           </div>
         </div>
       </article>
@@ -503,7 +503,7 @@
         </div>
 
         <div class="flex flex-wrap items-center justify-between gap-2 text-xs sm:text-sm pt-1">
-          <span class="text-mocha"><strong class="text-espresso">🛬 回程：</strong>提前於 <strong>2027/01/11 (一)</strong> 返台</span>
+          <span class="text-mocha"><strong class="text-espresso">🛬 回程：</strong>提前於 <strong>2027/01/11 (一)</strong> 返台（建議選晚班機）</span>
           <span class="px-2.5 py-0.5 rounded-md bg-destiCoral/20 border border-destiCoral/40 text-xs font-bold text-espresso">⚠️ 機票尚未購買</span>
         </div>
       </article>
@@ -934,18 +934,18 @@
 
         <div class="flex items-center justify-between gap-2 bg-white border border-latte rounded-xl px-3.5 py-2">
           <div class="min-w-0">
-            <div class="text-[11px] text-mocha">Day 5 金浦厲旭 Forest for Rest 森林</div>
-            <div class="font-bold text-xs sm:text-sm text-espresso truncate">경기도 김포시 김포한강2로 41</div>
-          </div>
-          <button type="button" onclick="copyText('경기도 김포시 김포한강2로 41', '已複製厲旭咖啡廳地址')" class="cafe-btn bg-cream px-3 py-1 text-xs font-medium text-espresso shrink-0 hover:bg-oatmeal">複製</button>
-        </div>
-
-        <div class="flex items-center justify-between gap-2 bg-white border border-latte rounded-xl px-3.5 py-2">
-          <div class="min-w-0">
             <div class="text-[11px] text-mocha">Day 5 弘大 Revoir Custom Brush 刷具</div>
             <div class="font-bold text-xs sm:text-sm text-espresso truncate">서울 마포구 와우산로 91</div>
           </div>
           <button type="button" onclick="copyText('서울 마포구 와우산로 91', '已複製刷具店地址')" class="cafe-btn bg-cream px-3 py-1 text-xs font-medium text-espresso shrink-0 hover:bg-oatmeal">複製</button>
+        </div>
+
+        <div class="flex items-center justify-between gap-2 bg-white border border-latte rounded-xl px-3.5 py-2">
+          <div class="min-w-0">
+            <div class="text-[11px] text-mocha">Day 6 金浦厲旭 Forest for Rest 森林</div>
+            <div class="font-bold text-xs sm:text-sm text-espresso truncate">경기도 김포시 김포한강2로 41</div>
+          </div>
+          <button type="button" onclick="copyText('경기도 김포시 김포한강2로 41', '已複製厲旭咖啡廳地址')" class="cafe-btn bg-cream px-3 py-1 text-xs font-medium text-espresso shrink-0 hover:bg-oatmeal">複製</button>
         </div>
       </div>
     </section>
@@ -967,7 +967,7 @@
 
   <script>
     // ============================================================
-    // 1. 仁川機場夜間巴士互動路線與時刻表（依官方圖一、圖二製作）
+    // 1. 仁川機場夜間巴士互動路線與時刻表
     // ============================================================
     const nightBusData = {
       N6000: {
@@ -1122,51 +1122,51 @@
     }
 
     // ============================================================
-    // 2. 每日行程資料（同步忙・豆 1/13 19:45 回程航班與人數變化）
+    // 2. 每日行程資料（完整納入雙重哈魯、1/12分組行動、1/13弘大送機、1/14金浦厲旭）
     // ============================================================
     const itineraryData = [
       {
         dayLabel: 'Day 1',
         dateLabel: '1/9 (六)',
         fullTitle: 'Day 1｜01/09 (週六)',
-        badge: '分批抵達 ➔ 5人會合',
+        badge: '分批抵達 ➔ 凌晨 5 人全員會合',
         badgeStyle: 'bg-destiBlue/15 text-espresso border-destiBlue/30',
-        summary: '豆、袖 1/8 已先在首爾接應；忙 1/9 07:05 搭長榮 BR170 於 10:30 抵韓；令、保晚間 23:30 抵達後進市區，01/10 02:00 全員 5 人大集合。',
+        summary: '豆、袖 01/08 已先抵韓接應；忙 01/09 上午 10:30 抵達；令、保晚間 23:30 抵達仁川後搭深夜巴士進市區，凌晨與忙、豆、袖 5 人全員會合。',
         events: [
           {
-            time: '01/08 (五)',
-            title: '【豆、袖】搭長榮 BR170（07:05–10:30）提前抵韓，先行入住民宿',
-            transports: [{ label: '✈️ 長榮 BR170', style: 'bg-destiBlue/15 border-destiBlue/30' }],
-            mustVisit: false,
-            desc: '豆、袖 1/8 先至民宿確認門鎖密碼、熱水與暖氣，等待其他三位旅伴抵達。'
-          },
-          {
-            time: '07:05 - 10:30',
-            title: '【忙】桃園 T2 起飛 (長榮 BR170) ➔ 10:30 抵達仁川 T1，赴民宿與豆、袖會合',
+            time: '10:30',
+            title: '【忙】抵達仁川機場 ➔ 與先到的「豆、袖」會合',
             transports: [
               { label: '✈️ 長榮 BR170', style: 'bg-destiBlue/15 border-destiBlue/30' },
               { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' },
               { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' }
             ],
             mustVisit: false,
-            desc: '忙上午 10:30 落地仁川 T1 後前往民宿放行李，白天與豆、袖先在市區逛街休息。'
+            desc: '忙上午 10:30 抵達仁川機場 → 搭機場快線（AREX）轉地鐵 5 號線至「青丘站」與先到的 豆、袖（01/08 07:05 出發抵韓，已先行確認門鎖密碼與環境）會合。'
           },
           {
             time: '20:00 - 23:30',
-            title: '【令、保】桃園機場起飛 (台灣虎航 IT602) ➔ 抵達仁川機場',
+            title: '【令、保】桃園起飛（虎航 IT602）➔ 23:30 抵達仁川機場',
             transports: [{ label: '✈️ 台灣虎航', style: 'bg-destiPink/15 border-destiPink/30' }],
             mustVisit: false,
-            desc: '令、保 20:00 從 TPE 起飛，預計 23:30 抵達仁川國際機場 T1，辦理入境手續與領取行李。'
+            desc: '令、保 20:00 桃園起飛 → 23:30 抵達仁川機場 T1，辦理入境與領取行李。'
           },
           {
-            time: '00:00 - 02:00',
-            title: '【令、保】深夜進市區抵民宿 ➔ 忙・令・豆・袖・保 5人全員大集合！',
+            time: '00:15',
+            title: '【令、保】搭乘機場深夜巴士 N6002 至「東大門（興仁之門）」下車',
+            transports: [{ label: '🚌 深夜巴士 N6002', style: 'bg-destiPink/15 border-destiPink/30' }],
+            mustVisit: false,
+            desc: '於 T1 1樓 6A 站牌搭乘 N6002（車程約 75 分鐘，刷 T-money 卡約 17,000 韓元）至「東大門（興仁之門 / 동대문 흥인지문）」站下車。'
+          },
+          {
+            time: '約 01:30',
+            title: '【令、保】合搭計程車直達青丘站民宿 ➔ 忙・令・豆・袖・保 5人全員會合休息',
             transports: [
-              { label: '🚌 深夜巴士', style: 'bg-destiPink/15 border-destiPink/30' },
-              { label: '🚕 計程車', style: 'bg-destiPurple/15 border-destiPurple/30' }
+              { label: '🚕 計程車', style: 'bg-destiPurple/15 border-destiPurple/30' },
+              { label: '🚶 步行1分', style: 'bg-oatmeal border-latte' }
             ],
             mustVisit: false,
-            desc: '若住候補 ① 青丘站：搭深夜巴士 N6002 至東大門(興仁之門)轉計程車 3 分鐘即達；若住候補 ② 禾谷洞：可搭 N6000 至松亭/鹽倉站轉計程車或機場計程車直達，於 01/10 02:00 與忙、豆、袖全員會合！'
+            desc: '下車後 2 人合搭計程車（車程約 3–4 分鐘，起跳價約 4,800 韓元，每人約台幣 55 元）直達青丘站民宿，與 忙、豆、袖 5 人全員會合休息。'
           }
         ]
       },
@@ -1174,52 +1174,59 @@
         dayLabel: 'Day 2',
         dateLabel: '1/10 (日)',
         fullTitle: 'Day 2｜01/10 (週日)',
-        badge: '全員5人 演唱會日',
+        badge: '全員 5 人 · D&E 15週年演唱會',
         badgeStyle: 'bg-destiPink/20 text-espresso border-destiPink/40',
-        summary: '忙、令、豆、袖、保全員 5 人出動！前往仁川 NAVER ARENA at INSPIRE 參加 DE-STIVAL : THE 15/15 演唱會。',
+        summary: '全員 5 人出動！前往仁川 NAVER ARENA at INSPIRE 參加 DE-STIVAL : THE 15/15 演唱會（16:00–19:30），散場回新堂／東大門吃慶功大餐。',
         events: [
           {
             time: '10:30',
-            title: '民宿周邊吃平價紫菜包飯或超商早餐',
+            title: '青丘站／新堂站附近吃平價紫菜包飯或超商早餐',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: false,
-            desc: '睡飽補足體力，5 人在民宿附近輕鬆吃早餐、檢查手燈電池與門票證件。'
+            desc: '睡飽後在青丘站／新堂站附近吃平價紫菜包飯或超商早餐，檢查應援手燈與門票證件。'
           },
           {
             time: '11:30',
-            title: '5 人出發前往仁川 NAVER ARENA at INSPIRE',
+            title: '出發前往仁川 NAVER ARENA at INSPIRE（總車程約 75 分鐘）',
             transports: [
               { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
               { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' },
               { label: '🚌 免費接駁車', style: 'bg-destiPink/15 border-destiPink/30' }
             ],
             mustVisit: false,
-            desc: '搭 5 號線轉 AREX 普通車至仁川機場 T1，再到 1 樓 2C 或 14C 站牌搭 INSPIRE 免費接駁巴士（0元）。'
+            desc: '「青丘站」搭 地鐵 5 號線（4 站／約 10 分鐘）至「孔德站」→ 站內轉乘 機場快線（AREX 普通車）（約 50 分鐘）至「仁川機場 T1」→ 1 樓 2C 或 14C 站牌搭 INSPIRE 免費接駁巴士（約 15 分鐘，0 元）。'
           },
           {
             time: '13:00 - 15:30',
-            title: '場外領官方周邊、收集免費應援小卡手幅、5人大合照',
+            title: '場外領周邊、收集免費應援小卡手幅、5 人大合照',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
-            mustVisit: true,
-            desc: '提前抵達會場感受應援熱潮，拍下忙、令、豆、袖、保 5 人演唱會紀念合照。'
+            mustVisit: false,
+            desc: '提前到場外領取官方周邊、收集粉絲免費應援物，拍下忙、令、豆、袖、保 5 人大合照。'
           },
           {
             time: '16:00 - 19:30',
-            title: 'DE-STIVAL : THE 15/15 演唱會',
+            title: '🔥 D&E 15週年演唱會！DE-STIVAL : THE 15/15',
             transports: [],
             mustVisit: true,
-            desc: 'NAVER ARENA at INSPIRE！揮舞寶藍手燈盡情享受東海與銀赫的 15 週年舞台。'
+            desc: 'NAVER ARENA at INSPIRE！揮舞寶藍手燈盡情應援東海與銀赫的 15 週年舞台！'
           },
           {
-            time: '19:30 - 21:30',
-            title: '散場回市區 ➔ 吃 5 人慶功烤肉或部隊鍋',
+            time: '19:30 - 21:15',
+            title: '散場回市區（總車程約 80 分鐘）',
             transports: [
               { label: '🚌 免費接駁車', style: 'bg-destiPink/15 border-destiPink/30' },
               { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' },
               { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' }
             ],
             mustVisit: false,
-            desc: '搭免費接駁車回 T1（或 5 人分搭 2 台計程車回 T1）→ 搭 AREX 轉 5 號線回市區吃慶功大餐。'
+            desc: '搭 INSPIRE 免費接駁巴士 回 T1（若排隊太長，5 人分乘 2 台計程車到 T1 約台幣 115 元/人）→ 搭 AREX 普通車至「孔德站」轉 5 號線回「青丘站」。'
+          },
+          {
+            time: '21:30',
+            title: '新堂／東大門周邊吃 5 人慶功烤肉或部隊鍋',
+            transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
+            mustVisit: false,
+            desc: '回到新堂／東大門周邊享用 5 人慶功大餐！'
           }
         ]
       },
@@ -1227,64 +1234,40 @@
         dayLabel: 'Day 3',
         dateLabel: '1/11 (一)',
         fullTitle: 'Day 3｜01/11 (週一)',
-        badge: 'SM追星一條線 · 袖今日返台',
+        badge: '5 人 → 送別袖返台',
         badgeStyle: 'bg-destiCoral/15 text-espresso border-destiCoral/30',
-        summary: '沿著首爾東側地鐵線順向踩點：SM 曠野 ➔ 聖水東海咖啡 ➔ 建大藝聲衣櫥＆鼠兔（袖依航班時間提前赴機場返台，其餘 4 人繼續行程）。',
+        summary: '早衝東海哈魯咖啡（讓今天返台的袖也喝到！）＋ 聖水商圈 ＋ 建大藝聲雙咖啡，晚間送別「袖」赴機場返台。',
         events: [
           {
-            time: '10:00',
-            title: '出發前往首爾林站',
-            transports: [{ label: '🚇 地鐵5號線＋盆唐線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
+            time: '09:15',
+            title: '出發前往聖水洞（車程約 15 分鐘）',
+            transports: [{ label: '🚇 地鐵5號線→2號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: false,
-            desc: '搭地鐵 5 號線至往十里站，站內轉乘水仁·盆唐線（1站）至「首爾林站」4/5號出口直通 D-Tower 地下一樓。'
+            desc: '「青丘站」搭 5 號線（1 站）至「東大門歷史文化公園站」，轉 2 號線（4 站）至「聖水站」。'
           },
           {
-            time: '10:30',
-            title: 'SM大樓 KWANGYA@SEOUL (曠野)',
-            transports: [{ label: '🚶 出口直通', style: 'bg-oatmeal border-latte' }],
-            mustVisit: true,
-            desc: '趁 10:30 剛開門人最少時朝聖！拍大型螢幕應援牆、採買官方周邊（滿 15,000 韓元記得帶護照現場退稅）。'
-          },
-          {
-            time: '12:30',
-            title: '午餐：傳說中的聖水馬鈴薯排骨湯',
-            transports: [
-              { label: '🚇 地鐵', style: 'bg-destiBlue/15 border-destiBlue/30' },
-              { label: '🚶 步行12分', style: 'bg-oatmeal border-latte' }
-            ],
-            mustVisit: false,
-            desc: '前往聖水站，合點大鍋馬鈴薯排骨湯分食超划算。（註：【袖】今日提前返台，依機票時間回民宿拿行李搭 5 號線轉 AREX 赴仁川機場）'
-          },
-          {
-            time: '14:00',
-            title: '李東海 HARU COFFEE HOUSE ＋ 逛聖水洞潮牌香氛街',
+            time: '09:45',
+            title: '第一波衝刺：李東海「HARU COFFEE HOUSE（하루커피하우스）」',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: true,
-            desc: '朝聖東海新店 HARU COFFEE HOUSE (하루커피하우스) 喝咖啡打卡，接著在聖水洞逛潮流選物店與香氛品牌。'
+            desc: '一早開門前先來排隊／抽號碼牌（讓今天就要回台灣的 袖 也能喝到！），喝完咖啡後在聖水洞自由吃午餐、逛香氛與潮牌街。'
           },
           {
-            time: '17:30',
-            title: '金鐘雲(藝聲) Cafe Armoire 衣櫥咖啡廳',
+            time: '16:00',
+            title: '前往建大商圈：金鐘雲(藝聲) Cafe Armoire（衣櫥咖啡廳）',
             transports: [{ label: '🚇 地鐵2號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: true,
-            desc: '搭 2 號線往東 2 站（僅 5 分鐘）至「建大入口站」，趁日落前後光線最美時拍照、享用招牌甜點（營業至 23:00）。'
+            desc: '搭 2 號線僅 2 站（車程 5 分鐘）至「建大入口站」，先拍日落光線最美的 Cafe Armoire（衣櫥咖啡廳，營業至 23:00），趁甜點齊全時享用。'
           },
           {
-            time: '19:00',
-            title: '建大美食街平價晚餐',
-            transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
-            mustVisit: false,
-            desc: '在熱鬧的建大商圈享用晚餐。'
-          },
-          {
-            time: '20:15',
-            title: '金鐘雲(藝聲) Mouse Rabbit 鼠兔咖啡廳',
+            time: '18:30',
+            title: '建大美食街晚餐 ＋ 鼠兔咖啡廳（Mouse Rabbit）➔ ✈️ 送別「袖」返台',
             transports: [
               { label: '🚶 步行2分', style: 'bg-oatmeal border-latte' },
-              { label: '🚇 地鐵2號線→5號線', style: 'bg-destiBlue/15 border-destiBlue/30' }
+              { label: '🚇 地鐵5號線＋AREX', style: 'bg-destiBlue/15 border-destiBlue/30' }
             ],
             mustVisit: true,
-            desc: '距離衣櫥僅步行 2 分鐘，營業至 23:00。悠閒喝飲料坐坐後，搭 2 號線轉 5 號線回民宿。'
+            desc: '吃完建大美食街晚餐後，步行 2 分鐘去 鼠兔咖啡廳（營業至 23:00）喝飲料坐坐。視 袖 訂到的晚班機時間（建議抓起飛前 3.5 小時從市區出發），回青丘站民宿拿行李搭 5 號線轉 AREX 前往仁川機場。'
           }
         ]
       },
@@ -1292,47 +1275,47 @@
         dayLabel: 'Day 4',
         dateLabel: '1/12 (二)',
         fullTitle: 'Day 4｜01/12 (週二)',
-        badge: '4人 祈福＆血拼日',
+        badge: '4 人分組行動 ➔ 11:30 奉恩寺會合',
         badgeStyle: 'bg-destiPurple/15 text-espresso border-destiPurple/30',
-        summary: '忙、令、豆、保 4 人順路踩點：江南奉恩寺買手鍊 ➔ 明洞 chaakan 買鞋換錢 ➔ 東大門夜購掃貨！',
+        summary: '上午分組（忙令豆二刷哈魯 ／ 保去 SM 曠野或景福宮），11:30 江南奉恩寺 4 人合體 ➔ 星空圖書館 ➔ 明洞 chaakan ➔ 東大門夜購！',
         events: [
           {
-            time: '09:45',
-            title: '出發前往江南三成站',
-            transports: [{ label: '🚇 地鐵5號線→2號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
-            mustVisit: false,
-            desc: '搭地鐵 5 號線轉 2 號線直達「三成站」（或轉 9 號線至奉恩寺站）。'
-          },
-          {
-            time: '10:15',
-            title: '奉恩寺祈福 ＋ 買十二生肖幸運手鍊',
-            transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
+            time: '09:30 - 11:30',
+            title: '🌅 上午分組行動｜🅰️ 忙、令、豆（二刷哈魯） ／ 🅱️ 保（SM 曠野或景福宮）',
+            transports: [{ label: '🚇 地鐵分組移動', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: true,
-            desc: '參拜奉恩寺並購買人氣十二生肖幸運手鍊（約 5,000～10,000 韓元，記得提前準備韓元現金）。'
+            desc: '【🅰️ 忙、令、豆（3人）】從青丘轉 2 號線至「聖水站」（約 15 分鐘）二刷「HARU COFFEE HOUSE」排隊喝東海咖啡、補逛聖水洞（若前一天已喝夠，也可睡飽 10:00 再直接出發去奉恩寺）；結束後搭 2 號線直達「三成站」（僅 4 站／約 10 分鐘）會合。\n【🅱️ 保（1人）】二選一：路線 ① SM 曠野（10:30 開門，青丘搭 5 號線至往十里轉水仁·盆唐線至「首爾林站」4/5 號出口，結束後搭水仁·盆唐線至宣靖陵轉 9 號線至「奉恩寺站」）；路線 ② 景福宮（09:00 開門，青丘搭 5 號線至「光化門站」，結束後搭 3 號線至高速巴士客運站轉 9 號線至「奉恩寺站」）。'
           },
           {
             time: '11:30',
-            title: 'COEX Mall 星空圖書館拍照 ＋ 地下美食街午餐',
+            title: '🤝 江南奉恩寺 4 人會合祈福 ＋ 買十二生肖幸運手鍊',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
-            mustVisit: false,
-            desc: '過馬路進 COEX Mall 吹暖氣拍免費「星空圖書館」，並在地下美食街享用午餐。'
+            mustVisit: true,
+            desc: '4 人（忙、令、豆、保）在奉恩寺會合參拜，購買人氣十二生肖幸運手鍊（約 5,000～10,000 韓元，備韓元現金）。'
           },
           {
-            time: '14:00',
-            title: '明洞 chaakan 平價女鞋 ＋ 換錢掃貨',
+            time: '12:30',
+            title: 'COEX 星空圖書館拍照 ＋ 地下美食街午餐',
+            transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
+            mustVisit: false,
+            desc: '過馬路進 COEX Mall 吹暖氣拍星空圖書館、吃午餐。'
+          },
+          {
+            time: '14:45',
+            title: '明洞商圈（chaakan 女鞋 ＋ 換錢大創）',
             transports: [{ label: '🚇 地鐵', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: true,
-            desc: '明洞站 6 號出口，地址：首爾特別市中區明洞8娜街25號（滿 15,000 韓元帶護照現場退稅）。順路去換錢所換匯、逛 12 層樓大創與 Olive Young。'
+            desc: '搭車至「明洞站」6 號出口，直奔 chaakan（首爾特別市中區明洞8娜街25號）試穿平價美鞋（滿 15,000 韓元帶護照現場退稅），順路換錢、逛大創與 Olive Young。'
           },
           {
             time: '20:00',
-            title: '東大門夜購掃貨 ＋ 陳玉華一隻雞',
+            title: '東大門夜購掃貨 ＋ 陳玉華一隻雞 ➔ 散步回青丘民宿',
             transports: [
               { label: '🚇 地鐵4號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
-              { label: '🚶 步行', style: 'bg-oatmeal border-latte' }
+              { label: '🚶 散步8-12分', style: 'bg-oatmeal border-latte' }
             ],
             mustVisit: true,
-            desc: '搭 4 號線 2 站至東大門歷史文化公園站，主攻 nyu·nyu、MIMILINE 飾品與批發服飾（4人超好湊同款 2 件批發價），宵夜吃陳玉華一隻雞！'
+            desc: '搭 4 號線至東大門（僅 2 站／車程 5 分鐘），開逛 nyu·nyu、MIMILINE 飾品與批發服飾（4 人湊同款 2 件批發價），宵夜合吃 陳玉華一隻雞，逛完直接散步走回青丘站民宿（步行約 8–12 分鐘）。'
           }
         ]
       },
@@ -1340,94 +1323,95 @@
         dayLabel: 'Day 5',
         dateLabel: '1/13 (三)',
         fullTitle: 'Day 5｜01/13 (週三)',
-        badge: '16:00 送別忙・豆 ➔ 剩2人',
+        badge: '4 人 → 16:00 送別忙、豆',
         badgeStyle: 'bg-destiPink/15 text-espresso border-destiPink/30',
-        summary: '早上 4 人去金浦厲旭森林咖啡；約 16:00 送別「忙、豆」赴仁川機場（搭 19:45 長榮 BR159 返台），晚上「令、保」2 人去弘大訂製刷具＆吃金豬食堂！',
+        summary: '4 人睡飽逛弘大＋訂製刷具，15:45–16:00 弘大站直接搭 AREX 送別「忙、豆」赴機場（搭 19:45 班機），晚上「令、保」2 人吃金豬食堂！',
         events: [
           {
-            time: '09:45',
-            title: '4 人出發前往金浦（5 號線一班車直達金浦機場站）',
-            transports: [
-              { label: '🚇 地鐵5號線直達', style: 'bg-destiBlue/15 border-destiBlue/30' },
-              { label: '🚕 計程車', style: 'bg-destiPurple/15 border-destiPurple/30' }
-            ],
+            time: '10:30',
+            title: '4 人睡飽出發前往弘大（車程約 22 分鐘）',
+            transports: [{ label: '🚇 地鐵2號線直達', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: false,
-            desc: '搭 5 號線直達「金浦機場站」（若住候補 ② 禾谷洞，搭 5 號線僅需 3 站約 8 分鐘！），再轉金浦黃金線或叫一台計程車前往。'
+            desc: '早上 忙、豆 先整理好行李退房（可將行李寄放在青丘站民宿，或直接帶到「弘大入口站」置物櫃）。4 人從「新堂站／東大門歷史文化公園站」搭 地鐵 2 號線（綠線）一班車直達「弘大入口站」。'
           },
           {
-            time: '11:00',
-            title: '金厲旭 Forest for Rest 森林咖啡廳（4人）',
-            transports: [],
-            mustVisit: true,
-            desc: '避開週一二公休！地址：경기도 김포시 김포한강2로 41。4 人在店內享用早午餐、喝咖啡，並與招牌長頸鹿造景拍照打卡。'
-          },
-          {
-            time: '16:00',
-            title: '【忙、豆】回民宿拿行李赴仁川機場 T1（搭乘 19:45 長榮 BR159 返台）',
-            transports: [
-              { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
-              { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' }
-            ],
+            time: '11:30',
+            title: '弘大早午餐 ＋ 逛弘大／延南洞商圈',
+            transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: false,
-            desc: '忙、豆 16:00 出發前往仁川機場 T1，搭乘 19:45 長榮 BR159 班機（預計 21:40 抵達桃園 T2）；【令、保】2 人繼續留在首爾行程！'
+            desc: '輕鬆吃早午餐、逛街拍照。'
           },
           {
-            time: '15:30 - 17:30',
-            title: '【令、保】順路前往弘大 Revoir Custom Brush 訂製刷具',
-            transports: [
-              { label: '🚄 AREX機場快線', style: 'bg-destiCoral/15 border-destiCoral/30' },
-              { label: '🚶 步行', style: 'bg-oatmeal border-latte' }
-            ],
+            time: '13:30',
+            title: 'Revoir Custom Brush 訂製刷具',
+            transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: true,
-            desc: '地址：首爾特別市麻浦區臥牛山路91號。客製專屬刷具，記得提前上官方 IG 確認預約規則與營業時間。'
+            desc: '地址：首爾特別市麻浦區臥牛山路91號。4 人一起客製專屬刷具（記得提前上官方 IG 確認預約規則）。'
           },
           {
-            time: '18:30',
-            title: '【令、保】「金豬食堂」2人烤肉晚餐',
+            time: '15:45 - 16:00',
+            title: '✈️ 送別「忙、豆」（搭 19:45 長榮 BR159 返台）',
+            transports: [{ label: '🚄 AREX機場快線', style: 'bg-destiCoral/15 border-destiCoral/30' }],
+            mustVisit: false,
+            desc: '因為 弘大入口站 本身就是 機場快線（AREX） 車站（直達仁川機場只要 52 分鐘），忙、豆 直接從弘大站領行李搭 AREX 去機場最順路（若行李放青丘，最晚 15:30 需先回青丘拿行李再去孔德轉 AREX）。'
+          },
+          {
+            time: '17:30',
+            title: '【令、保】2 人回民宿旁吃「金豬食堂」',
             transports: [{ label: '🚇 地鐵2號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
             mustVisit: false,
-            desc: '搭 2 號線至新堂／藥水站，享用米其林烤肉名店金豬食堂（記得一早用 CatchTable 線上抽號碼牌）。'
+            desc: '搭 2 號線回新堂／青丘，享用米其林烤肉名店「金豬食堂（금돼지식당）」（早上記得用 CatchTable 線上抽號碼牌），晚上繼續續住青丘民宿。'
           }
         ]
       },
       {
         dayLabel: 'Day 6',
         dateLabel: '1/14~15',
-        fullTitle: 'Day 6｜01/14 (週四) ~ 01/15 (週五)',
-        badge: '令、保 2人悠閒收尾',
+        fullTitle: 'Day 6｜01/14 (週四) → 01/15 (週五)',
+        badge: '2 人：令、保 悠閒收尾',
         badgeStyle: 'bg-destiBlue/15 text-espresso border-destiBlue/30',
-        summary: '令、保 2 人 11:00 退房寄放行李，白天逛益善洞韓屋村、首爾站樂天超市最後採買伴手禮裝箱，20:15 赴仁川機場搭虎航返台！',
+        summary: '令、保 2 人前往金浦厲旭「Forest for Rest 森林咖啡廳」，回程順路首爾站樂天超市或益善洞補貨，20:15 赴仁川機場搭 01/15 00:30 虎航返台！',
         events: [
           {
-            time: '11:00',
-            title: '【令、保】民宿退房並寄放行李',
+            time: '09:45',
+            title: '【令、保】民宿退房＆寄放行李',
             transports: [{ label: '🚶 步行', style: 'bg-oatmeal border-latte' }],
             mustVisit: false,
-            desc: '提前與房東確認退房後行李暫放民宿玄關至 20:00，或寄放在地鐵站／首爾站大型投幣置物櫃。'
+            desc: '確認行李暫放青丘站民宿玄關（或直接寄放在 「金浦機場站／首爾站／孔德站」 大型置物櫃，晚上不用再折返青丘拿行李更省時）。'
           },
           {
-            time: '12:00',
-            title: '【令、保】2人自由補貨：益善洞韓屋村 ／ 首爾站樂天超市',
-            transports: [{ label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' }],
+            time: '10:00',
+            title: '【令、保】出發前往金浦：金厲旭「Forest for Rest 森林咖啡廳」',
+            transports: [
+              { label: '🚇 地鐵5號線直達', style: 'bg-destiBlue/15 border-destiBlue/30' },
+              { label: '🚕 計程車', style: 'bg-destiPurple/15 border-destiPurple/30' }
+            ],
+            mustVisit: true,
+            desc: '從「青丘站」搭 地鐵 5 號線（紫線） 一班車直達「金浦機場站」（約 50 分鐘），轉乘金浦黃金線（至場基站步行約 10–12 分鐘）或 2 人叫計程車，約 11:15 抵達金厲旭的「Forest for Rest 森林咖啡廳」（週四正常營業！地址：경기도 김포시 김포한강2로 41）。'
+          },
+          {
+            time: '14:30',
+            title: '【令、保】回程順路補貨（首爾站樂天超市 或 益善洞韓屋村）',
+            transports: [
+              { label: '🚄 AREX普通車', style: 'bg-destiCoral/15 border-destiCoral/30' },
+              { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' }
+            ],
             mustVisit: false,
-            desc: '搭 5 號線至「鍾路3街站」逛益善洞韓屋村喝下午茶、拍人生四格；或前往「首爾站樂天超市」把海苔、泡麵、零食伴手禮一次買齊裝箱。'
+            desc: '從金浦機場站搭 AREX 普通車 至「首爾站」（僅 22 分鐘）逛樂天超市把海苔、泡麵伴手禮一次買齊裝箱，或轉 5 號線去「鍾路3街站」逛益善洞韓屋村喝下午茶。'
           },
           {
             time: '20:15',
-            title: '【令、保】領行李出發前往仁川機場 T1',
-            transports: [
-              { label: '🚇 地鐵5號線', style: 'bg-destiBlue/15 border-destiBlue/30' },
-              { label: '🚄 AREX快線', style: 'bg-destiCoral/15 border-destiCoral/30' }
-            ],
+            title: '【令、保】出發前往仁川機場（總車程約 50–65 分鐘）',
+            transports: [{ label: '🚄 AREX普通車', style: 'bg-destiCoral/15 border-destiCoral/30' }],
             mustVisit: false,
-            desc: '領取行李後搭 5 號線轉 AREX 普通車前往仁川機場 T1，約 21:30 抵達辦理登機與機場退稅。'
+            desc: '領行李搭 AREX 普通車 直達仁川機場 T1，約 21:30 抵達辦理登機、領取退稅。'
           },
           {
             time: '00:30',
-            title: '01/15 (週五)【令、保】台灣虎航 IT603 起飛返台',
+            title: '01/15 (週五)【令、保】虎航 IT603 起飛返台！',
             transports: [{ label: '✈️ 台灣虎航', style: 'bg-destiPink/15 border-destiPink/30' }],
             mustVisit: false,
-            desc: '00:30 仁川起飛，預計台灣時間 02:15 抵達桃園機場，滿載回憶歸國。'
+            desc: '00:30 仁川起飛，預計台灣時間 02:15 抵達桃園機場，滿載回憶歸國！'
           }
         ]
       }
@@ -1484,7 +1468,7 @@
                 ${transportBadges}
               </div>
               <h3 class="text-sm sm:text-base font-bold leading-snug text-espresso">${ev.title}</h3>
-              <p class="text-xs sm:text-sm leading-relaxed text-mocha mt-1">${ev.desc}</p>
+              <p class="text-xs sm:text-sm leading-relaxed text-mocha mt-1 whitespace-pre-line">${ev.desc}</p>
             </div>
           </div>
         `;
@@ -1590,9 +1574,9 @@
     // ============================================================
     // 4. 可打勾的待辦清單 (localStorage 持久化)
     // ============================================================
-    const STORAGE_KEY = 'dne_seoul_2027_5members_checklist_v4';
+    const STORAGE_KEY = 'dne_seoul_2027_5members_checklist_v5';
     const defaultChecklist = [
-      { id: 'c0', text: '【袖】購買 2027/01/11 (一) 返台回程機票並確認時間' },
+      { id: 'c0', text: '【袖】購買 2027/01/11 (一) 返台回程機票（建議選晚班機，白天可完整參與聖水與建大行程）' },
       { id: 'c1', text: '【全員】近出發日拍板決定候補 ①（青丘站）或候補 ②（禾谷洞）並退掉另一間' },
       { id: 'c2', text: '【豆、袖】01/08 提前抵達向房東確認門鎖密碼、暖氣與電梯出口' },
       { id: 'c3', text: '私訊房東確認 01/10 凌晨 02:00 令、保入住與 01/14 退房暫放行李' },
